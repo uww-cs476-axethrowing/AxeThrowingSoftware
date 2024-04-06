@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://kj6w4qldh8eh"]
+
+[ext_resource type="Script" path="res://PlayerController.gd" id="1_duvu5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_duvu5")
+
+[node name="AddPlayerButton" type="Button" parent="."]
+offset_left = 204.0
+offset_top = 119.0
+offset_right = 303.0
+offset_bottom = 165.0
+text = "Add Player"
+
+[connection signal="pressed" from="AddPlayerButton" to="." method="_on_add_player_button_pressed"]

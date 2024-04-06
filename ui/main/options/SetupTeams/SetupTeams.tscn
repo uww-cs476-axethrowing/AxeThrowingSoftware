@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://c2hgnntef48kl"]
+
+[ext_resource type="Script" path="res://ui/main/options/SetupTeams/PlayerController.gd" id="1_5ha6k"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/options/SetupTeams/VerdanaFont.tres" id="2_cllre"]
+[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/options/SetupTeams/ButtonStyleNormal.tres" id="3_kp7oa"]
+[ext_resource type="StyleBox" uid="uid://bequivv5im1u4" path="res://ui/main/options/SetupTeams/ButtonStylePressed.tres" id="4_o66vh"]
+[ext_resource type="Script" path="res://ui/main/options/SetupTeams/PlayerItemList.gd" id="5_qshga"]
+
+[sub_resource type="Theme" id="Theme_7816n"]
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_7cheq"]
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_2re03"]
+default_font = ExtResource("2_cllre")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_g10jf"]
+default_font = ExtResource("2_cllre")
+default_font_size = 25
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_5ha6k")
+
+[node name="AddPlayerButton" type="Button" parent="."]
+offset_left = 344.0
+offset_right = 575.0
+offset_bottom = 62.0
+theme = SubResource("Theme_7816n")
+theme_override_fonts/font = ExtResource("2_cllre")
+theme_override_styles/normal = ExtResource("3_kp7oa")
+theme_override_styles/hover = ExtResource("4_o66vh")
+text = "Add Player"
+
+[node name="PlayerListObject" type="ItemList" parent="."]
+offset_left = 344.0
+offset_top = 141.0
+offset_right = 806.0
+offset_bottom = 191.0
+theme = SubResource("Theme_7cheq")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_cllre")
+theme_override_styles/panel = ExtResource("3_kp7oa")
+allow_reselect = true
+auto_height = true
+script = ExtResource("5_qshga")
+
+[node name="RenamePlayerButton" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 71.0
+offset_right = 575.0
+offset_bottom = 133.0
+theme = SubResource("Theme_2re03")
+theme_override_styles/normal = ExtResource("3_kp7oa")
+theme_override_styles/hover = ExtResource("4_o66vh")
+text = "Rename Player:"
+
+[node name="PlayerLineEdit" type="LineEdit" parent="."]
+offset_left = 575.0
+offset_top = 71.0
+offset_right = 806.0
+offset_bottom = 133.0
+theme = SubResource("Theme_g10jf")
+theme_override_styles/normal = ExtResource("3_kp7oa")
+alignment = 1
+max_length = 10
+
+[connection signal="pressed" from="AddPlayerButton" to="." method="_on_add_player_button_pressed"]
+[connection signal="button_down" from="RenamePlayerButton" to="." method="_on_rename_player_button_button_down"]
