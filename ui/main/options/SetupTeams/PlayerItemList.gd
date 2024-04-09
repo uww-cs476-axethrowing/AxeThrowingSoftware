@@ -6,7 +6,7 @@ var currentPlayer = -1
 func _ready():
 	print(PlayerList.global_list)
 	for player in PlayerList.global_list:
-		self.add_item(str(player.get_playerName))
+		self.add_item(str(player))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

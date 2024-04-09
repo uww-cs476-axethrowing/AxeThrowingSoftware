@@ -29,13 +29,13 @@ func _addPlayer(name):
 	const newPlayerScript = preload("res://ui/main/options/SetupTeams/Player.gd")
 	newPlayer.set_script(newPlayerScript)
 	#Add the player to the player list and increment numPlayers
-	playerList.append(newPlayer)
+	playerList.append(name)
 	numPlayers += 1
 	#set the players name to the default name "player n"
 	newPlayer.set_playerName(name)
 	print(newPlayer.get_playerName())
 	#add the player to the item list so that they can be selected later
-	playerListObject.add_item(name, newPlayer, true)
+	playerListObject.add_item(name)
 
 
 func _nextPlayer(currentPlayerIndex):
@@ -52,7 +52,7 @@ func _on_rename_player_button_button_down():
 #Sets the player name in both the item list and the respective player object
 func _renamePlayer(name, current):
 	if(current.size() > 0 and name != ""):
-		playerList[current[0]].set_playerName(name)
+		playerList[current[0]] = name
 		playerListObject.set_item_text(current[0], name)
 
 #connecter for remove button
