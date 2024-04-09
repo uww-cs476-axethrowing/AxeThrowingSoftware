@@ -1,18 +1,14 @@
-extends Object
+extends Node
+var global_list = []
 
-var playerScore = 0
-var playerName = ""
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-func get_playerName():
-	return str(playerName)
-
-func set_playerName(name):
-	playerName = str(name)
+func set_List(list):
+	global_list = list

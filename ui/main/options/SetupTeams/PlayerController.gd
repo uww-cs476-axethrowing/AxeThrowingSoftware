@@ -8,7 +8,7 @@ var currentPlayerIndex = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	playerList = PlayerList.global_list
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,6 +33,7 @@ func _addPlayer(name):
 	numPlayers += 1
 	#set the players name to the default name "player n"
 	newPlayer.set_playerName(name)
+	print(newPlayer.get_playerName())
 	#add the player to the item list so that they can be selected later
 	playerListObject.add_item(name, newPlayer, true)
 
@@ -61,11 +62,18 @@ func _on_remove_player_button_button_down():
 		_removePlayer(current)
 		playerListObject.remove_item(current)
 
+#removes player from player list
 func _removePlayer(current):
 	playerList.remove_at(current)
 	numPlayers -= 1
 	
 
-
+#connecter for done button
 func _on_done_button_button_down():
+	if(playerList.size() != 0):
+		PlayerList.set_List(playerList)
 	get_tree().change_scene_to_file("res://ui/main/menu.tscn")
+	
+
+
+

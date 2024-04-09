@@ -1,9 +1,12 @@
 extends ItemList
 var currentPlayer = -1
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print(PlayerList.global_list)
+	for player in PlayerList.global_list:
+		self.add_item(str(player.get_playerName))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
