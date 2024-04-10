@@ -24,16 +24,9 @@ func _on_add_player_button_pressed():
 
 #Structure behind adding player
 func _addPlayer(name):
-	#Create a new player object and give it the Player script
-	var newPlayer = Object.new()
-	const newPlayerScript = preload("res://ui/main/options/SetupTeams/Player.gd")
-	newPlayer.set_script(newPlayerScript)
 	#Add the player to the player list and increment numPlayers
 	playerList.append(name)
 	numPlayers += 1
-	#set the players name to the default name "player n"
-	newPlayer.set_playerName(name)
-	print(newPlayer.get_playerName())
 	#add the player to the item list so that they can be selected later
 	playerListObject.add_item(name)
 
