@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://ui/main/modeselect/menu.tscn")
+	get_tree().change_scene_to_file("res://ui/main/Traditional Game/TraditionalGame.tscn")
 
 
 func _on_options_button_pressed():

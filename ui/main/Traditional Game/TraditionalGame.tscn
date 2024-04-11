@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu3a4jh1c366f"]
+[gd_scene load_steps=6 format=3 uid="uid://cu3a4jh1c366f"]
 
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/options/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
+[ext_resource type="Script" path="res://ui/main/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
 [ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/options/SetupTeams/VerdanaFont.tres" id="1_s425j"]
 
 [sub_resource type="Theme" id="Theme_ofh1m"]
@@ -12,31 +13,38 @@ default_font = ExtResource("1_s425j")
 default_font_size = 18
 
 [node name="TraditionalGame" type="Node2D"]
+script = ExtResource("1_aad8j")
 
-[node name="ScoreBoardRow" type="Container" parent="."]
-offset_left = 37.0
-offset_top = 77.0
-offset_right = 77.0
-offset_bottom = 117.0
+[node name="ScoreBoardRow1" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_right = 380.0
+offset_bottom = 40.0
 
-[node name="LineEdit" type="LineEdit" parent="ScoreBoardRow"]
-layout_mode = 2
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow1"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="FrameRow" type="GridContainer" parent="."]
-offset_top = 3.0
-offset_right = 760.0
-offset_bottom = 34.0
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow1"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
 size_flags_stretch_ratio = 0.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 10
 
-[node name="Frame" type="LineEdit" parent="FrameRow"]
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -46,7 +54,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame2" type="LineEdit" parent="FrameRow"]
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -56,7 +64,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame3" type="LineEdit" parent="FrameRow"]
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -66,7 +74,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame4" type="LineEdit" parent="FrameRow"]
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -76,7 +84,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame5" type="LineEdit" parent="FrameRow"]
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -86,7 +94,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame6" type="LineEdit" parent="FrameRow"]
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -96,7 +104,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame7" type="LineEdit" parent="FrameRow"]
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -106,7 +114,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame8" type="LineEdit" parent="FrameRow"]
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -116,7 +124,7 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame9" type="LineEdit" parent="FrameRow"]
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -126,7 +134,917 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
 
-[node name="Frame10" type="LineEdit" parent="FrameRow"]
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow1/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="ScoreBoardRow2" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 31.0
+offset_right = 380.0
+offset_bottom = 71.0
+
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow2"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ofh1m")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow2"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow2/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="ScoreBoardRow3" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 62.0
+offset_right = 380.0
+offset_bottom = 102.0
+
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow3"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ofh1m")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow3"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow3/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="ScoreBoardRow4" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 93.0
+offset_right = 380.0
+offset_bottom = 133.0
+
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow4"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ofh1m")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow4"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow4/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="ScoreBoardRow5" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 124.0
+offset_right = 380.0
+offset_bottom = 164.0
+
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow5"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ofh1m")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow5"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow5/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="ScoreBoardRow6" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 155.0
+offset_right = 380.0
+offset_bottom = 195.0
+
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow6"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ofh1m")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow6"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow6/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="ScoreBoardRow7" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 186.0
+offset_right = 380.0
+offset_bottom = 226.0
+
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow7"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ofh1m")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow7"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow7/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="ScoreBoardRow8" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 217.0
+offset_right = 380.0
+offset_bottom = 257.0
+
+[node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow8"]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 31.0
+theme = SubResource("Theme_ofh1m")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="FrameRow" type="GridContainer" parent="ScoreBoardRow8"]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 860.0
+offset_bottom = 31.0
+scale = Vector2(0.479999, 1)
+size_flags_stretch_ratio = 0.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 10
+
+[node name="Frame" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame2" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame3" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame4" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame5" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame6" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame7" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame8" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame9" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
+layout_mode = 2
+theme = SubResource("Theme_r710w")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_styles/read_only = ExtResource("1_72dic")
+alignment = 1
+editable = false
+
+[node name="Frame10" type="LineEdit" parent="ScoreBoardRow8/FrameRow"]
 layout_mode = 2
 theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
