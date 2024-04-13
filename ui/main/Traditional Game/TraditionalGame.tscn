@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://cu3a4jh1c366f"]
+[gd_scene load_steps=13 format=3 uid="uid://cu3a4jh1c366f"]
 
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/options/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
 [ext_resource type="Script" path="res://ui/main/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
 [ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/options/SetupTeams/VerdanaFont.tres" id="1_s425j"]
+[ext_resource type="Texture2D" uid="uid://mrk1rqnl0axj" path="res://Sprites/Ring1.png" id="4_a14ch"]
+[ext_resource type="Texture2D" uid="uid://brsrat7fetytm" path="res://Sprites/Ring2.png" id="5_vi4gf"]
+[ext_resource type="Texture2D" uid="uid://ctggyxn36txd7" path="res://Sprites/Ring3.png" id="6_1ejci"]
+[ext_resource type="Texture2D" uid="uid://7yycqp8s35x4" path="res://Sprites/Ring4.png" id="7_ghvm4"]
+[ext_resource type="Texture2D" uid="uid://1binqhrxrslv" path="res://Sprites/GreenBull.png" id="8_udcwo"]
+[ext_resource type="Texture2D" uid="uid://bqtfgifdxub12" path="res://Sprites/Inner_bullseye.png" id="9_p6l1p"]
 
 [sub_resource type="Theme" id="Theme_ofh1m"]
 default_font = ExtResource("1_s425j")
@@ -12,6 +18,8 @@ default_font_size = 12
 default_font = ExtResource("1_s425j")
 default_font_size = 18
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhh8k"]
+
 [node name="TraditionalGame" type="Node2D"]
 script = ExtResource("1_aad8j")
 
@@ -20,8 +28,7 @@ visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 340.0
-offset_right = 380.0
-offset_bottom = 40.0
+offset_right = 340.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="ScoreBoardRow1"]
 layout_mode = 0
@@ -1053,3 +1060,88 @@ theme_override_constants/outline_size = 0
 theme_override_styles/read_only = ExtResource("1_72dic")
 alignment = 1
 editable = false
+
+[node name="Ring1Area" type="Area2D" parent="."]
+top_level = true
+
+[node name="Ring1Sprite" type="Sprite2D" parent="Ring1Area"]
+position = Vector2(575, 472)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("4_a14ch")
+
+[node name="Ring1Collision" type="CollisionShape2D" parent="Ring1Area"]
+position = Vector2(575, 472)
+scale = Vector2(17.2, 17.2)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring2Area" type="Area2D" parent="."]
+top_level = true
+
+[node name="Ring2Sprite" type="Sprite2D" parent="Ring2Area"]
+position = Vector2(575, 472)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("5_vi4gf")
+
+[node name="Ring2Collision" type="CollisionShape2D" parent="Ring2Area"]
+position = Vector2(575, 472)
+scale = Vector2(13.8, 13.8)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring3Area" type="Area2D" parent="."]
+top_level = true
+
+[node name="Ring3Sprite" type="Sprite2D" parent="Ring3Area"]
+position = Vector2(575, 472)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("6_1ejci")
+
+[node name="Ring3Collision" type="CollisionShape2D" parent="Ring3Area"]
+position = Vector2(575, 472)
+scale = Vector2(10.3, 10.3)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring4Area" type="Area2D" parent="."]
+top_level = true
+
+[node name="Ring4Sprite" type="Sprite2D" parent="Ring4Area"]
+position = Vector2(575, 472)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("7_ghvm4")
+
+[node name="Ring4Collision" type="CollisionShape2D" parent="Ring4Area"]
+position = Vector2(575, 472)
+scale = Vector2(6.9, 6.9)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring5Area" type="Area2D" parent="."]
+top_level = true
+
+[node name="Ring5Sprite" type="Sprite2D" parent="Ring5Area"]
+position = Vector2(575, 472)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("8_udcwo")
+
+[node name="Ring5Collision" type="CollisionShape2D" parent="Ring5Area"]
+position = Vector2(575, 472)
+scale = Vector2(3.5, 3.5)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring6Area" type="Area2D" parent="."]
+top_level = true
+
+[node name="Ring6Sprite" type="Sprite2D" parent="Ring6Area"]
+position = Vector2(575, 472)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("9_p6l1p")
+
+[node name="Ring6Collision" type="CollisionShape2D" parent="Ring6Area"]
+position = Vector2(575, 472)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[connection signal="input_event" from="Ring1Area" to="." method="_on_ring_1_area_input_event"]
+[connection signal="input_event" from="Ring2Area" to="." method="_on_ring_2_area_input_event"]
+[connection signal="input_event" from="Ring3Area" to="." method="_on_ring_3_area_input_event"]
+[connection signal="input_event" from="Ring4Area" to="." method="_on_ring_4_area_input_event"]
+[connection signal="input_event" from="Ring5Area" to="." method="_on_ring_5_area_input_event"]
+[connection signal="input_event" from="Ring6Area" to="." method="_on_ring_6_area_input_event"]
