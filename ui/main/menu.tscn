@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://du1tbakhk2jrv"]
+[gd_scene load_steps=4 format=3 uid="uid://du1tbakhk2jrv"]
 
 [ext_resource type="Script" path="res://ui/main/Menu.gd" id="1_6000a"]
 [ext_resource type="Texture2D" uid="uid://csxpthgiwacvd" path="res://Sprites/Standard Target (1).png" id="2_nwb32"]
+[ext_resource type="Texture2D" uid="uid://bkoyd3agwcb5m" path="res://Sprites/Setup Teams.png" id="3_b5u34"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -26,19 +27,28 @@ offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptionsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-focus_neighbor_right = NodePath("../Quit")
-focus_neighbor_bottom = NodePath("../Quit")
-text = "Options"
-
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-focus_neighbor_left = NodePath("../OptionsButton")
-focus_neighbor_top = NodePath("../OptionsButton")
 text = "Quit"
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="StandardTargetMenuBt" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -323.0
+offset_right = 396.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("2_nwb32")
+
+[node name="SetupTeamsMenuBt" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
 anchors_preset = 8
@@ -53,8 +63,8 @@ offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.2, 0.2)
-texture_normal = ExtResource("2_nwb32")
+texture_normal = ExtResource("3_b5u34")
 
-[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="StandardTargetMenuBt" to="." method="_on_standard_target_menu_bt_pressed"]
+[connection signal="pressed" from="SetupTeamsMenuBt" to="." method="_on_setup_teams_menu_bt_pressed"]

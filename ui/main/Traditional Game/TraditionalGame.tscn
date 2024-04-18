@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cu3a4jh1c366f"]
+[gd_scene load_steps=14 format=3 uid="uid://cu3a4jh1c366f"]
 
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/options/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
 [ext_resource type="Script" path="res://ui/main/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
@@ -19,6 +19,9 @@ default_font = ExtResource("1_s425j")
 default_font_size = 18
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhh8k"]
+
+[sub_resource type="Theme" id="Theme_0y1s6"]
+default_font = ExtResource("1_s425j")
 
 [node name="TraditionalGame" type="Node2D"]
 script = ExtResource("1_aad8j")
@@ -1138,6 +1141,116 @@ texture = ExtResource("9_p6l1p")
 position = Vector2(575, 472)
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="TotalScoresContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 804.0
+offset_right = 872.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.506, 1.069)
+theme_override_constants/separation = 0
+
+[node name="TotalScore1" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
+
+[node name="TotalScore2" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
+
+[node name="TotalScore3" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
+
+[node name="TotalScore4" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
+
+[node name="TotalScore5" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
+
+[node name="TotalScore6" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
+
+[node name="TotalScore7" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
+
+[node name="TotalScore8" type="LineEdit" parent="TotalScoresContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_0y1s6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
+theme_override_styles/read_only = ExtResource("1_72dic")
+text = "0"
+alignment = 1
+editable = false
 
 [connection signal="input_event" from="Ring1Area" to="." method="_on_ring_1_area_input_event"]
 [connection signal="input_event" from="Ring2Area" to="." method="_on_ring_2_area_input_event"]

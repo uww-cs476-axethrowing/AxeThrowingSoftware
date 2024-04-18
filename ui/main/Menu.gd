@@ -10,15 +10,12 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_options_button_pressed():
-	get_tree().change_scene_to_file("res://ui/main/options/SetupTeams/SetupTeams.tscn")
-	#var options = load("res://ui/main/options/menu.tscn").instance()
-	#get_tree().current_scene.add_child(options)
-
-
 func _on_quit_pressed():
 	get_tree().quit()
 
+func _on_setup_teams_menu_bt_pressed():
+	get_tree().change_scene_to_file("res://ui/main/options/SetupTeams/SetupTeams.tscn")
 
-func _on_texture_button_pressed():
+
+func _on_standard_target_menu_bt_pressed():
 	get_tree().change_scene_to_file("res://ui/main/Traditional Game/TraditionalGame.tscn")
