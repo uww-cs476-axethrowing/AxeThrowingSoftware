@@ -4,7 +4,6 @@ var currentPlayer = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(PlayerList.global_list)
 	for player in PlayerList.global_list:
 		self.add_item(str(player))
 

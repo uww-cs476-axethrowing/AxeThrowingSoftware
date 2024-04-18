@@ -2,13 +2,14 @@ extends Node
 
 var numPlayers = 0
 var playerList = []
-var currentPlayerIndex = 0
+
 @onready var playerListObject = get_node("PlayerListObject")
 @onready var playerNameText = get_node("PlayerLineEdit")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	playerList = PlayerList.global_list
+	numPlayers = playerList.size()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,13 +31,6 @@ func _addPlayer(name):
 	#add the player to the item list so that they can be selected later
 	playerListObject.add_item(name)
 
-
-func _nextPlayer(currentPlayerIndex):
-	currentPlayerIndex += 1
-	if(currentPlayerIndex >= numPlayers):
-		currentPlayerIndex = 0
-		
-
 #connecter for rename button
 func _on_rename_player_button_button_down():
 	playerNameText.select_all()
@@ -53,12 +47,13 @@ func _on_remove_player_button_button_down():
 	if playerListObject.get_current().size() > 0:
 		var current = playerListObject.get_current()[0]
 		_removePlayer(current)
-		playerListObject.remove_item(current)
 
 #removes player from player list
 func _removePlayer(current):
-	playerList.remove_at(current)
-	numPlayers -= 1
+	if(playerList.size() > 1):
+		playerList.remove_at(current)
+		playerListObject.remove_item(current)
+		numPlayers -= 1
 	
 
 #connecter for done button
