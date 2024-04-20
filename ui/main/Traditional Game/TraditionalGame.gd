@@ -67,13 +67,17 @@ func UpdateCurrentStyle(player, frame, style):
 	get_node(currentsbRow).get_child(1).get_children()[frame].set("theme_override_styles/read_only", style)
 	
 #Finds the previous player, even across frames
+#Returns a list: [prev player index, prev frame]
 func findPreviousPlayer():
 	if(currentPlayer == 0 and currentFrame == 0):
-		return null
+		return [0, 0]
 	elif(currentPlayer == 0):
 		return [playerList.size() - 1, currentFrame - 1]
 	else:
 		return [currentPlayer - 1, currentFrame]
+
+func newGame():
+	get_tree().change_scene_to_file("res://ui/main/Traditional Game/TraditionalGame.tscn")
 
 
 func _on_ring_1_area_input_event(viewport, event, shape_idx):
@@ -107,3 +111,29 @@ func _on_ring_6_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			tempScoreHolder += 1
+
+func _on_miss_button_button_down():
+	nextPlayer()
+
+func _on_undo_button_button_down():
+	#finds prev player
+	var prev = findPreviousPlayer()
+	#Changes styles to reflect current player
+	UpdateCurrentStyle(currentPlayer, currentFrame, styleForNormal)
+	UpdateCurrentStyle(prev[0], prev[1], styleForCurrent)
+	#Updates current variables
+	currentPlayer = prev[0]
+	currentFrame = prev[1]
+	#finds the point that was last clicked
+	var lastPoint = int(sbArray[currentPlayer].get_children()[currentFrame].get_text())
+	#Updates total
+	totals[currentPlayer] -= lastPoint
+	get_node("TotalScoresContainer").get_child(currentPlayer).set_text(str(totals[currentPlayer]))
+	#Updates scoreboard text
+	sbArray[currentPlayer].get_children()[currentFrame].set_text("")
+
+func _on_new_game_button_button_down():
+	newGame()
+
+func _on_main_menu_button_button_down():
+	get_tree().change_scene_to_file("res://ui/main/menu.tscn")
