@@ -76,10 +76,6 @@ func findPreviousPlayer():
 	else:
 		return [currentPlayer - 1, currentFrame]
 
-func newGame():
-	get_tree().change_scene_to_file("res://ui/main/Traditional Game/TraditionalGame.tscn")
-
-
 func _on_ring_1_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -133,7 +129,7 @@ func _on_undo_button_button_down():
 	sbArray[currentPlayer].get_children()[currentFrame].set_text("")
 
 func _on_new_game_button_button_down():
-	newGame()
+	get_tree().change_scene_to_file("res://ui/main/Traditional Game/TraditionalGame.tscn")
 
 func _on_main_menu_button_button_down():
 	get_tree().change_scene_to_file("res://ui/main/menu.tscn")

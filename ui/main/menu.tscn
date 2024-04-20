@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://du1tbakhk2jrv"]
+[gd_scene load_steps=6 format=3 uid="uid://du1tbakhk2jrv"]
 
 [ext_resource type="Script" path="res://ui/main/Menu.gd" id="1_6000a"]
 [ext_resource type="Texture2D" uid="uid://csxpthgiwacvd" path="res://Sprites/Standard Target (1).png" id="2_nwb32"]
 [ext_resource type="Texture2D" uid="uid://bkoyd3agwcb5m" path="res://Sprites/Setup Teams.png" id="3_b5u34"]
+[ext_resource type="Texture2D" uid="uid://cxg8rh2geis1w" path="res://Sprites/hunter.png" id="4_5gqt5"]
+[ext_resource type="Texture2D" uid="uid://b6raokgdtipbx" path="res://Sprites/Tic.png" id="5_1rp2m"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -34,36 +36,54 @@ text = "Quit"
 [node name="StandardTargetMenuBt" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -104.0
-offset_top = -323.0
-offset_right = 396.0
-offset_bottom = 177.0
+offset_left = -107.0
+offset_right = 393.0
+offset_bottom = 500.0
 grow_horizontal = 2
-grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("2_nwb32")
 
 [node name="SetupTeamsMenuBt" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = -211.0
-offset_top = -323.0
 offset_right = 289.0
-offset_bottom = 177.0
+offset_bottom = 500.0
 grow_horizontal = 2
-grow_vertical = 2
 scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("3_b5u34")
+
+[node name="HunterMenuBt" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -3.0
+offset_right = 497.0
+offset_bottom = 500.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_5gqt5")
+
+[node name="TicTacToeMenuBt" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 102.0
+offset_right = 602.0
+offset_bottom = 500.0
+grow_horizontal = 2
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("5_1rp2m")
 
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="StandardTargetMenuBt" to="." method="_on_standard_target_menu_bt_pressed"]
