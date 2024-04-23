@@ -35,14 +35,15 @@ func _process(delta):
 	pass
 
 func nextPlayer():
-	#sets the text of the scoreboard to the clicked number
-	sbArray[currentPlayer].get_children()[currentFrame].set_text(str(tempScoreHolder))
-	#adds clicked number to player's total score
-	totals[currentPlayer] += tempScoreHolder
-	#sets the text of the total score
-	get_node("TotalScoresContainer").get_child(currentPlayer).set_text(str(totals[currentPlayer]))
-	tempScoreHolder = 0
-	currentPlayer += 1
+	if(currentFrame != 10): #Added to prevent clicking the target after the last frame from crashing the program
+		#sets the text of the scoreboard to the clicked number
+		sbArray[currentPlayer].get_children()[currentFrame].set_text(str(tempScoreHolder))
+		#adds clicked number to player's total score
+		totals[currentPlayer] += tempScoreHolder
+		#sets the text of the total score
+		get_node("TotalScoresContainer").get_child(currentPlayer).set_text(str(totals[currentPlayer]))
+		tempScoreHolder = 0
+		currentPlayer += 1
 	
 		#Goes to next frame after last player
 	if(currentPlayer > playerList.size() - 1):
@@ -53,7 +54,8 @@ func nextPlayer():
 	if (currentFrame >= 10):
 		var winnerscore = totals.max()
 		var winner = totals.rfind(winnerscore)
-		print(str(playerList[winner]) + " Wins") 
+		print(str(playerList[winner]) + " Wins")
+		tempScoreHolder = 0 #Prevents score from stacking after frame 10
 		return
 	#Updating the styles for scoreboard (makes it look better)
 	UpdateCurrentStyle(currentPlayer, currentFrame, styleForCurrent)
@@ -62,9 +64,10 @@ func nextPlayer():
 
 #Used for updating the box style of a player
 func UpdateCurrentStyle(player, frame, style):
-	var currentsbRow = "ScoreBoardRow" + str(player + 1)
-	get_node(currentsbRow).get_child(0).set("theme_override_styles/read_only", style)
-	get_node(currentsbRow).get_child(1).get_children()[frame].set("theme_override_styles/read_only", style)
+	if(currentFrame != 10): #Added to prevent clicking undo after last frame from crashing
+		var currentsbRow = "ScoreBoardRow" + str(player + 1)
+		get_node(currentsbRow).get_child(0).set("theme_override_styles/read_only", style)
+		get_node(currentsbRow).get_child(1).get_children()[frame].set("theme_override_styles/read_only", style)
 	
 #Finds the previous player, even across frames
 #Returns a list: [prev player index, prev frame]
