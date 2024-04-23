@@ -42,19 +42,21 @@ script = ExtResource("1_aad8j")
 
 [node name="Scoreboard" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 338.0
+offset_top = 1.0
+offset_right = 338.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
 
 [node name="ScoreBoardRow1" type="Control" parent="Scoreboard"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 725.0
-offset_top = 11.0
-offset_right = 725.0
-offset_bottom = 11.0
-metadata/_edit_use_anchors_ = true
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow1"]
 layout_mode = 0
@@ -1094,10 +1096,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 1169.0
-offset_top = -9.0
-offset_right = 1237.0
-offset_bottom = 223.0
+offset_left = 467.0
+offset_right = 535.0
+offset_bottom = 232.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.506, 1.069)
@@ -1200,11 +1201,10 @@ alignment = 1
 editable = false
 
 [node name="target" type="Node2D" parent="."]
-position = Vector2(3.05176e-05, 1.52588e-05)
+position = Vector2(573, 461)
+metadata/_edit_group_ = true
 
 [node name="Ring1Area" type="Area2D" parent="target"]
-top_level = true
-position = Vector2(973, 692)
 
 [node name="Ring1Sprite" type="Sprite2D" parent="target/Ring1Area"]
 scale = Vector2(0.175, 0.175)
@@ -1215,8 +1215,6 @@ scale = Vector2(17.2, 17.2)
 shape = SubResource("CircleShape2D_dhh8k")
 
 [node name="Ring2Area" type="Area2D" parent="target"]
-top_level = true
-position = Vector2(973, 692)
 
 [node name="Ring2Sprite" type="Sprite2D" parent="target/Ring2Area"]
 scale = Vector2(0.175, 0.175)
@@ -1227,8 +1225,6 @@ scale = Vector2(13.8, 13.8)
 shape = SubResource("CircleShape2D_dhh8k")
 
 [node name="Ring3Area" type="Area2D" parent="target"]
-top_level = true
-position = Vector2(973, 692)
 
 [node name="Ring3Sprite" type="Sprite2D" parent="target/Ring3Area"]
 scale = Vector2(0.175, 0.175)
@@ -1239,8 +1235,6 @@ scale = Vector2(10.3, 10.3)
 shape = SubResource("CircleShape2D_dhh8k")
 
 [node name="Ring4Area" type="Area2D" parent="target"]
-top_level = true
-position = Vector2(973, 692)
 
 [node name="Ring4Sprite" type="Sprite2D" parent="target/Ring4Area"]
 scale = Vector2(0.175, 0.175)
@@ -1251,8 +1245,6 @@ scale = Vector2(6.9, 6.9)
 shape = SubResource("CircleShape2D_dhh8k")
 
 [node name="Ring5Area" type="Area2D" parent="target"]
-top_level = true
-position = Vector2(973, 692)
 
 [node name="Ring5Sprite" type="Sprite2D" parent="target/Ring5Area"]
 scale = Vector2(0.175, 0.175)
@@ -1263,8 +1255,6 @@ scale = Vector2(3.5, 3.5)
 shape = SubResource("CircleShape2D_dhh8k")
 
 [node name="Ring6Area" type="Area2D" parent="target"]
-top_level = true
-position = Vector2(973, 692)
 
 [node name="Ring6Sprite" type="Sprite2D" parent="target/Ring6Area"]
 scale = Vector2(0.175, 0.175)
@@ -1280,14 +1270,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 724.0
-offset_top = 411.0
-offset_right = 1224.0
-offset_bottom = 440.0
+offset_left = 325.0
+offset_top = 221.0
+offset_right = 825.0
+offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 alignment = 1
+metadata/_edit_group_ = true
 
 [node name="MissButton" type="Button" parent="BottomButtonsContainer"]
 custom_minimum_size = Vector2(125, 0)

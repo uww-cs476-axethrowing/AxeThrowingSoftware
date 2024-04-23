@@ -19,10 +19,6 @@ config/icon="res://icon.svg"
 
 PlayerList="*res://player_list.gd"
 
-[display]
-
-window/size/mode=3
-
 [editor]
 
 version_control/plugin_name="GitPlugin"
