@@ -12,17 +12,6 @@
 [ext_resource type="StyleBox" uid="uid://8p4xpba05mg0" path="res://Sprites/RedFlatStyle.tres" id="10_p3ahd"]
 [ext_resource type="StyleBox" uid="uid://b5fgaahkdrq55" path="res://Sprites/RedStylePressed.tres" id="11_5nd4k"]
 
-[sub_resource type="Theme" id="Theme_ofh1m"]
-default_font = ExtResource("1_s425j")
-default_font_size = 12
-
-[sub_resource type="Theme" id="Theme_r710w"]
-default_font = ExtResource("1_s425j")
-default_font_size = 18
-
-[sub_resource type="Theme" id="Theme_0y1s6"]
-default_font = ExtResource("1_s425j")
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhh8k"]
 
 [sub_resource type="Theme" id="Theme_qecgn"]
@@ -37,26 +26,149 @@ default_font = ExtResource("1_s425j")
 [sub_resource type="Theme" id="Theme_a3cif"]
 default_font = ExtResource("1_s425j")
 
+[sub_resource type="Theme" id="Theme_ofh1m"]
+default_font = ExtResource("1_s425j")
+default_font_size = 12
+
+[sub_resource type="Theme" id="Theme_r710w"]
+default_font = ExtResource("1_s425j")
+default_font_size = 18
+
+[sub_resource type="Theme" id="Theme_0y1s6"]
+default_font = ExtResource("1_s425j")
+
 [node name="TraditionalGame" type="Node2D"]
 script = ExtResource("1_aad8j")
 
-[node name="Scoreboard" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 338.0
-offset_top = 1.0
-offset_right = 338.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+[node name="target" type="Node2D" parent="."]
+position = Vector2(573, 461)
 metadata/_edit_group_ = true
 
-[node name="ScoreBoardRow1" type="Control" parent="Scoreboard"]
+[node name="Ring1Area" type="Area2D" parent="target"]
+
+[node name="Ring1Sprite" type="Sprite2D" parent="target/Ring1Area"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("4_a14ch")
+
+[node name="Ring1Collision" type="CollisionShape2D" parent="target/Ring1Area"]
+scale = Vector2(17.2, 17.2)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring2Area" type="Area2D" parent="target"]
+
+[node name="Ring2Sprite" type="Sprite2D" parent="target/Ring2Area"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("5_vi4gf")
+
+[node name="Ring2Collision" type="CollisionShape2D" parent="target/Ring2Area"]
+scale = Vector2(13.8, 13.8)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring3Area" type="Area2D" parent="target"]
+
+[node name="Ring3Sprite" type="Sprite2D" parent="target/Ring3Area"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("6_1ejci")
+
+[node name="Ring3Collision" type="CollisionShape2D" parent="target/Ring3Area"]
+scale = Vector2(10.3, 10.3)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring4Area" type="Area2D" parent="target"]
+
+[node name="Ring4Sprite" type="Sprite2D" parent="target/Ring4Area"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("7_ghvm4")
+
+[node name="Ring4Collision" type="CollisionShape2D" parent="target/Ring4Area"]
+scale = Vector2(6.9, 6.9)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring5Area" type="Area2D" parent="target"]
+
+[node name="Ring5Sprite" type="Sprite2D" parent="target/Ring5Area"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("8_udcwo")
+
+[node name="Ring5Collision" type="CollisionShape2D" parent="target/Ring5Area"]
+scale = Vector2(3.5, 3.5)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="Ring6Area" type="Area2D" parent="target"]
+
+[node name="Ring6Sprite" type="Sprite2D" parent="target/Ring6Area"]
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("9_p6l1p")
+
+[node name="Ring6Collision" type="CollisionShape2D" parent="target/Ring6Area"]
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="BottomButtonsContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 322.0
+offset_top = 250.0
+offset_right = 822.0
+offset_bottom = 279.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="MissButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_qecgn")
+text = "MISS"
+
+[node name="UndoButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_hnane")
+theme_override_styles/normal = ExtResource("10_p3ahd")
+theme_override_styles/hover = ExtResource("10_p3ahd")
+theme_override_styles/pressed = ExtResource("11_5nd4k")
+text = "UNDO"
+
+[node name="NewGameButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_60pq0")
+text = "NEW GAME"
+
+[node name="MainMenuButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_a3cif")
+theme_override_styles/normal = ExtResource("10_p3ahd")
+theme_override_styles/hover = ExtResource("10_p3ahd")
+theme_override_styles/pressed = ExtResource("11_5nd4k")
+text = "MAIN MENU"
+
+[node name="Scoreboard" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 322.0
+offset_top = 2.0
+offset_right = 819.0
+offset_bottom = 249.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="ScoreBoardRow1" type="Control" parent="Scoreboard"]
+visible = false
 anchors_preset = 0
+offset_right = 465.0
+offset_bottom = 31.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow1"]
 layout_mode = 0
@@ -181,12 +293,10 @@ editable = false
 
 [node name="ScoreBoardRow2" type="Control" parent="Scoreboard"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = 340.0
 offset_top = 31.0
-offset_right = 380.0
-offset_bottom = 71.0
+offset_right = 465.0
+offset_bottom = 62.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow2"]
 layout_mode = 0
@@ -311,12 +421,10 @@ editable = false
 
 [node name="ScoreBoardRow3" type="Control" parent="Scoreboard"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = 340.0
 offset_top = 62.0
-offset_right = 380.0
-offset_bottom = 102.0
+offset_right = 465.0
+offset_bottom = 93.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow3"]
 layout_mode = 0
@@ -441,12 +549,10 @@ editable = false
 
 [node name="ScoreBoardRow4" type="Control" parent="Scoreboard"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = 340.0
 offset_top = 93.0
-offset_right = 380.0
-offset_bottom = 133.0
+offset_right = 465.0
+offset_bottom = 124.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow4"]
 layout_mode = 0
@@ -571,12 +677,10 @@ editable = false
 
 [node name="ScoreBoardRow5" type="Control" parent="Scoreboard"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = 340.0
 offset_top = 124.0
-offset_right = 380.0
-offset_bottom = 164.0
+offset_right = 465.0
+offset_bottom = 155.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow5"]
 layout_mode = 0
@@ -701,12 +805,10 @@ editable = false
 
 [node name="ScoreBoardRow6" type="Control" parent="Scoreboard"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = 340.0
 offset_top = 155.0
-offset_right = 380.0
-offset_bottom = 195.0
+offset_right = 465.0
+offset_bottom = 186.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow6"]
 layout_mode = 0
@@ -831,12 +933,10 @@ editable = false
 
 [node name="ScoreBoardRow7" type="Control" parent="Scoreboard"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = 340.0
 offset_top = 186.0
-offset_right = 380.0
-offset_bottom = 226.0
+offset_right = 465.0
+offset_bottom = 217.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow7"]
 layout_mode = 0
@@ -961,12 +1061,10 @@ editable = false
 
 [node name="ScoreBoardRow8" type="Control" parent="Scoreboard"]
 visible = false
-layout_mode = 3
 anchors_preset = 0
-offset_left = 340.0
 offset_top = 217.0
-offset_right = 380.0
-offset_bottom = 257.0
+offset_right = 465.0
+offset_bottom = 248.0
 
 [node name="PlayerLineEdit" type="LineEdit" parent="Scoreboard/ScoreBoardRow8"]
 layout_mode = 0
@@ -1090,22 +1188,16 @@ alignment = 1
 editable = false
 
 [node name="TotalScoresContainer" type="VBoxContainer" parent="Scoreboard"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 467.0
-offset_right = 535.0
-offset_bottom = 232.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.506, 1.069)
+layout_mode = 0
+offset_left = 464.0
+offset_right = 532.0
+offset_bottom = 248.0
+scale = Vector2(0.48, 1)
 theme_override_constants/separation = 0
 
 [node name="TotalScore1" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1118,6 +1210,7 @@ editable = false
 
 [node name="TotalScore2" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1130,6 +1223,7 @@ editable = false
 
 [node name="TotalScore3" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1142,6 +1236,7 @@ editable = false
 
 [node name="TotalScore4" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1154,6 +1249,7 @@ editable = false
 
 [node name="TotalScore5" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1166,6 +1262,7 @@ editable = false
 
 [node name="TotalScore6" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1178,6 +1275,7 @@ editable = false
 
 [node name="TotalScore7" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1190,6 +1288,7 @@ editable = false
 
 [node name="TotalScore8" type="LineEdit" parent="Scoreboard/TotalScoresContainer"]
 visible = false
+custom_minimum_size = Vector2(0, 31)
 layout_mode = 2
 theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1199,116 +1298,6 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 text = "0"
 alignment = 1
 editable = false
-
-[node name="target" type="Node2D" parent="."]
-position = Vector2(573, 461)
-metadata/_edit_group_ = true
-
-[node name="Ring1Area" type="Area2D" parent="target"]
-
-[node name="Ring1Sprite" type="Sprite2D" parent="target/Ring1Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("4_a14ch")
-
-[node name="Ring1Collision" type="CollisionShape2D" parent="target/Ring1Area"]
-scale = Vector2(17.2, 17.2)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring2Area" type="Area2D" parent="target"]
-
-[node name="Ring2Sprite" type="Sprite2D" parent="target/Ring2Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("5_vi4gf")
-
-[node name="Ring2Collision" type="CollisionShape2D" parent="target/Ring2Area"]
-scale = Vector2(13.8, 13.8)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring3Area" type="Area2D" parent="target"]
-
-[node name="Ring3Sprite" type="Sprite2D" parent="target/Ring3Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("6_1ejci")
-
-[node name="Ring3Collision" type="CollisionShape2D" parent="target/Ring3Area"]
-scale = Vector2(10.3, 10.3)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring4Area" type="Area2D" parent="target"]
-
-[node name="Ring4Sprite" type="Sprite2D" parent="target/Ring4Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("7_ghvm4")
-
-[node name="Ring4Collision" type="CollisionShape2D" parent="target/Ring4Area"]
-scale = Vector2(6.9, 6.9)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring5Area" type="Area2D" parent="target"]
-
-[node name="Ring5Sprite" type="Sprite2D" parent="target/Ring5Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("8_udcwo")
-
-[node name="Ring5Collision" type="CollisionShape2D" parent="target/Ring5Area"]
-scale = Vector2(3.5, 3.5)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring6Area" type="Area2D" parent="target"]
-
-[node name="Ring6Sprite" type="Sprite2D" parent="target/Ring6Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("9_p6l1p")
-
-[node name="Ring6Collision" type="CollisionShape2D" parent="target/Ring6Area"]
-scale = Vector2(1.5, 1.5)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="BottomButtonsContainer" type="HBoxContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 325.0
-offset_top = 221.0
-offset_right = 825.0
-offset_bottom = 250.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 0
-alignment = 1
-metadata/_edit_group_ = true
-
-[node name="MissButton" type="Button" parent="BottomButtonsContainer"]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme = SubResource("Theme_qecgn")
-text = "MISS"
-
-[node name="UndoButton" type="Button" parent="BottomButtonsContainer"]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme = SubResource("Theme_hnane")
-theme_override_styles/normal = ExtResource("10_p3ahd")
-theme_override_styles/hover = ExtResource("10_p3ahd")
-theme_override_styles/pressed = ExtResource("11_5nd4k")
-text = "UNDO"
-
-[node name="NewGameButton" type="Button" parent="BottomButtonsContainer"]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme = SubResource("Theme_60pq0")
-text = "NEW GAME"
-
-[node name="MainMenuButton" type="Button" parent="BottomButtonsContainer"]
-custom_minimum_size = Vector2(125, 0)
-layout_mode = 2
-theme = SubResource("Theme_a3cif")
-theme_override_styles/normal = ExtResource("10_p3ahd")
-theme_override_styles/hover = ExtResource("10_p3ahd")
-theme_override_styles/pressed = ExtResource("11_5nd4k")
-text = "MAIN MENU"
 
 [connection signal="input_event" from="target/Ring1Area" to="." method="_on_ring_1_area_input_event"]
 [connection signal="input_event" from="target/Ring2Area" to="." method="_on_ring_2_area_input_event"]
