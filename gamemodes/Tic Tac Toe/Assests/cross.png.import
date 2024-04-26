@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1yxlf6505bri"
-path="res://.godot/imported/grid.png-9ff2fc0bdf552be27255a4da58dce2cd.ctex"
+uid="uid://dgtpgnq5igkfa"
+path="res://.godot/imported/cross.png-9bc4462861a2742fb95d34b9dcc8e47e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tic Tac Toe/Assests/grid.png"
-dest_files=["res://.godot/imported/grid.png-9ff2fc0bdf552be27255a4da58dce2cd.ctex"]
+source_file="res://gamemodes/Tic Tac Toe/Assests/cross.png"
+dest_files=["res://.godot/imported/cross.png-9bc4462861a2742fb95d34b9dcc8e47e.ctex"]
 
 [params]
 

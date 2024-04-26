@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://c2hgnntef48kl"]
 
-[ext_resource type="Script" path="res://ui/main/options/SetupTeams/PlayerController.gd" id="1_5ha6k"]
-[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/options/SetupTeams/VerdanaFont.tres" id="2_cllre"]
-[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/options/SetupTeams/ButtonStyleNormal.tres" id="3_kp7oa"]
-[ext_resource type="StyleBox" uid="uid://bequivv5im1u4" path="res://ui/main/options/SetupTeams/ButtonStylePressed.tres" id="4_o66vh"]
-[ext_resource type="Script" path="res://ui/main/options/SetupTeams/PlayerItemList.gd" id="5_qshga"]
-[ext_resource type="StyleBox" uid="uid://yw1cq6b70rm4" path="res://ui/main/options/SetupTeams/RedButtonStyleNormal.tres" id="6_abfxx"]
-[ext_resource type="StyleBox" uid="uid://co365rui2e327" path="res://ui/main/options/SetupTeams/RedButtonStyleHover.tres" id="7_a4eaq"]
-[ext_resource type="StyleBox" uid="uid://doy44wiie1lsr" path="res://ui/main/options/SetupTeams/BlueButtonStyleNormal.tres" id="8_2e185"]
-[ext_resource type="StyleBox" uid="uid://dqpdujr0336pa" path="res://ui/main/options/SetupTeams/BlueButtonStyleHover.tres" id="9_c3s06"]
+[ext_resource type="Script" path="res://ui/main/SetupTeams/PlayerController.gd" id="1_5ha6k"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="2_cllre"]
+[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="3_kp7oa"]
+[ext_resource type="StyleBox" uid="uid://bequivv5im1u4" path="res://ui/main/SetupTeams/ButtonStylePressed.tres" id="4_o66vh"]
+[ext_resource type="Script" path="res://ui/main/SetupTeams/PlayerItemList.gd" id="5_qshga"]
+[ext_resource type="StyleBox" uid="uid://yw1cq6b70rm4" path="res://ui/main/SetupTeams/RedButtonStyleNormal.tres" id="6_abfxx"]
+[ext_resource type="StyleBox" uid="uid://co365rui2e327" path="res://ui/main/SetupTeams/RedButtonStyleHover.tres" id="7_a4eaq"]
+[ext_resource type="StyleBox" uid="uid://doy44wiie1lsr" path="res://ui/main/SetupTeams/BlueButtonStyleNormal.tres" id="8_2e185"]
+[ext_resource type="StyleBox" uid="uid://dqpdujr0336pa" path="res://ui/main/SetupTeams/BlueButtonStyleHover.tres" id="9_c3s06"]
 
 [sub_resource type="Theme" id="Theme_7816n"]
 default_font_size = 25

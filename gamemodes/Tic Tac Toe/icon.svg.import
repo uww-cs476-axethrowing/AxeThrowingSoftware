@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jgp0gtb35gj6"
-path="res://.godot/imported/circle.png-f72db79e259a9ad055d8d02c9c19c7ef.ctex"
+uid="uid://bsdmw8f3yq86u"
+path="res://.godot/imported/icon.svg-15f8ac6a63c63106ba9514f9f7ef84b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tic Tac Toe/Assests/circle.png"
-dest_files=["res://.godot/imported/circle.png-f72db79e259a9ad055d8d02c9c19c7ef.ctex"]
+source_file="res://gamemodes/Tic Tac Toe/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-15f8ac6a63c63106ba9514f9f7ef84b2.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

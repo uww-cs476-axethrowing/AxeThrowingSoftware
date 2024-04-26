@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://du1tbakhk2jrv"]
+[gd_scene load_steps=7 format=3 uid="uid://du1tbakhk2jrv"]
 
 [ext_resource type="Script" path="res://ui/main/Menu.gd" id="1_6000a"]
 [ext_resource type="Texture2D" uid="uid://csxpthgiwacvd" path="res://Sprites/Standard Target (1).png" id="2_nwb32"]
 [ext_resource type="Texture2D" uid="uid://bkoyd3agwcb5m" path="res://Sprites/Setup Teams.png" id="3_b5u34"]
 [ext_resource type="Texture2D" uid="uid://cxg8rh2geis1w" path="res://Sprites/hunter.png" id="4_5gqt5"]
 [ext_resource type="Texture2D" uid="uid://b6raokgdtipbx" path="res://Sprites/Tic.png" id="5_1rp2m"]
+[ext_resource type="Texture2D" uid="uid://cjt3rqp6b6nqk" path="res://Sprites/Connect Four.png" id="6_te8in"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -71,10 +72,10 @@ texture_normal = ExtResource("5_1rp2m")
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer2"]
 layout_mode = 2
 
-[node name="SetupTeamsMenuBt" type="TextureButton" parent="VBoxContainer2/HBoxContainer2"]
+[node name="ConnectFourBt" type="TextureButton" parent="VBoxContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture_normal = ExtResource("3_b5u34")
+texture_normal = ExtResource("6_te8in")
 
 [node name="StandardTargetMenuBt" type="TextureButton" parent="VBoxContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(100, 100)
@@ -94,5 +95,6 @@ texture_normal = ExtResource("5_1rp2m")
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer2/HBoxContainer/SetupTeamsMenuBt" to="." method="_on_setup_teams_menu_bt_pressed"]
 [connection signal="pressed" from="VBoxContainer2/HBoxContainer/StandardTargetMenuBt" to="." method="_on_standard_target_menu_bt_pressed"]
-[connection signal="pressed" from="VBoxContainer2/HBoxContainer2/SetupTeamsMenuBt" to="." method="_on_setup_teams_menu_bt_pressed"]
-[connection signal="pressed" from="VBoxContainer2/HBoxContainer2/StandardTargetMenuBt" to="." method="_on_standard_target_menu_bt_pressed"]
+[connection signal="button_down" from="VBoxContainer2/HBoxContainer/HunterMenuBt" to="." method="_on_hunter_menu_bt_button_down"]
+[connection signal="button_down" from="VBoxContainer2/HBoxContainer/TicTacToeMenuBt" to="." method="_on_tic_tac_toe_menu_bt_button_down"]
+[connection signal="button_down" from="VBoxContainer2/HBoxContainer2/ConnectFourBt" to="." method="_on_connect_four_bt_button_down"]

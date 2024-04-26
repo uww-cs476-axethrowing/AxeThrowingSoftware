@@ -10,17 +10,11 @@ config_version=5
 
 [application]
 
-<<<<<<< HEAD
 config/name="ATP"
 run/main_scene="res://ui/main/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
-=======
-config/name="Tic Tac Toe"
-run/main_scene="res://ui/main/menu.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://Tic Tac Toe/icon.svg"
->>>>>>> 378ab7a4c0ce34b699f2163fed2cc78031cb2059
+<<<<<<<HEADconfig/name="ATP"
 
 [autoload]
 
@@ -29,21 +23,9 @@ DisplayControl="*res://display_control.gd"
 
 [display]
 
-<<<<<<< HEAD
 window/stretch/mode="canvas_items"
-=======
-window/size/viewport_width=900
-window/size/viewport_height=600
->>>>>>> 378ab7a4c0ce34b699f2163fed2cc78031cb2059
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
-<<<<<<< HEAD
-=======
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
->>>>>>> 378ab7a4c0ce34b699f2163fed2cc78031cb2059

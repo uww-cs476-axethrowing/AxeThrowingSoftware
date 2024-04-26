@@ -10,8 +10,8 @@ var currentPlayer = 0
 #help for adding/setting scores
 var tempScoreHolder = 0
 #
-var styleForCurrent = preload("res://ui/main/options/SetupTeams/BlueButtonStyleNormal.tres")
-var styleForNormal = preload("res://ui/main/options/SetupTeams/ButtonStyleNormal.tres")
+var styleForCurrent = preload("res://ui/main/SetupTeams/BlueButtonStyleNormal.tres")
+var styleForNormal = preload("res://ui/main/SetupTeams/ButtonStyleNormal.tres")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -132,7 +132,7 @@ func _on_undo_button_button_down():
 		sbArray[currentPlayer].get_children()[currentFrame].set_text("")
 
 func _on_new_game_button_button_down():
-	get_tree().change_scene_to_file("res://ui/main/Traditional Game/TraditionalGame.tscn")
+	get_tree().change_scene_to_file("res://gamemodes/Traditional Game/TraditionalGame.tscn")
 
 func _on_main_menu_button_button_down():
 	get_tree().change_scene_to_file("res://ui/main/menu.tscn")

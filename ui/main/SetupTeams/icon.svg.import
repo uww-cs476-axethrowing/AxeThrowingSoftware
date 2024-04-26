@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsdmw8f3yq86u"
-path="res://.godot/imported/icon.svg-af7c7b730afdc20fb4cdd84335caaccb.ctex"
+uid="uid://c8t2the7rjtub"
+path="res://.godot/imported/icon.svg-b42108c643f0cbc98bf418a49ce2455e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tic Tac Toe/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-af7c7b730afdc20fb4cdd84335caaccb.ctex"]
+source_file="res://ui/main/SetupTeams/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-b42108c643f0cbc98bf418a49ce2455e.ctex"]
 
 [params]
 

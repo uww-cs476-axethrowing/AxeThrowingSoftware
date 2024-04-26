@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bgm6br6hfgcmg"]
 
-[ext_resource type="Script" path="res://Tic Tac Toe/main.gd" id="1_e1tl8"]
-[ext_resource type="PackedScene" uid="uid://c7pcih01ku04i" path="res://Tic Tac Toe/Board.tscn" id="2_gxdnp"]
-[ext_resource type="PackedScene" uid="uid://c4r2v7f7s0cpc" path="res://Tic Tac Toe/sprite_2d.tscn" id="2_qwsr3"]
-[ext_resource type="PackedScene" uid="uid://bte3wogur7qbk" path="res://Tic Tac Toe/cross.tscn" id="2_w021o"]
+[ext_resource type="Script" path="res://gamemodes/Tic Tac Toe/main.gd" id="1_e1tl8"]
+[ext_resource type="PackedScene" uid="uid://c7pcih01ku04i" path="res://gamemodes/Tic Tac Toe/Board.tscn" id="2_gxdnp"]
+[ext_resource type="PackedScene" uid="uid://c4r2v7f7s0cpc" path="res://gamemodes/Tic Tac Toe/sprite_2d.tscn" id="2_qwsr3"]
+[ext_resource type="PackedScene" uid="uid://bte3wogur7qbk" path="res://gamemodes/Tic Tac Toe/cross.tscn" id="2_w021o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulmck"]
 bg_color = Color(0.435294, 0.203922, 0.0627451, 1)

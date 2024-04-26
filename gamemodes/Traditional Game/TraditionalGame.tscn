@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://cu3a4jh1c366f"]
 
-[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/options/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
-[ext_resource type="Script" path="res://ui/main/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
-[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/options/SetupTeams/VerdanaFont.tres" id="1_s425j"]
+[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
+[ext_resource type="Script" path="res://gamemodes/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="1_s425j"]
 [ext_resource type="Texture2D" uid="uid://mrk1rqnl0axj" path="res://Sprites/Ring1.png" id="4_a14ch"]
 [ext_resource type="Texture2D" uid="uid://brsrat7fetytm" path="res://Sprites/Ring2.png" id="5_vi4gf"]
 [ext_resource type="Texture2D" uid="uid://ctggyxn36txd7" path="res://Sprites/Ring3.png" id="6_1ejci"]
