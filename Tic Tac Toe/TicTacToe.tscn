@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://bgm6br6hfgcmg"]
+
+[ext_resource type="Script" path="res://Tic Tac Toe/main.gd" id="1_e1tl8"]
+[ext_resource type="PackedScene" uid="uid://c7pcih01ku04i" path="res://Tic Tac Toe/Board.tscn" id="2_gxdnp"]
+[ext_resource type="PackedScene" uid="uid://c4r2v7f7s0cpc" path="res://Tic Tac Toe/sprite_2d.tscn" id="2_qwsr3"]
+[ext_resource type="PackedScene" uid="uid://bte3wogur7qbk" path="res://Tic Tac Toe/cross.tscn" id="2_w021o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulmck"]
+bg_color = Color(0.435294, 0.203922, 0.0627451, 1)
+border_width_left = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibpu0"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_e1tl8")
+circle_scene = ExtResource("2_qwsr3")
+cross_scene = ExtResource("2_w021o")
+
+[node name="Board" parent="." instance=ExtResource("2_gxdnp")]
+position = Vector2(300, 300)
+
+[node name="SidePanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 600)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ulmck")
+
+[node name="PlayerLabel" type="Label" parent="."]
+offset_left = 600.0
+offset_top = 120.0
+offset_right = 900.0
+offset_bottom = 187.0
+theme_override_font_sizes/font_size = 45
+text = "Next Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerPanel" type="Panel" parent="."]
+offset_left = 650.0
+offset_top = 200.0
+offset_right = 850.0
+offset_bottom = 400.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ibpu0")
