@@ -9,9 +9,11 @@ var currentFrame = 0
 var currentPlayer = 0
 #help for adding/setting scores
 var tempScoreHolder = 0
-#
+#Styles for buttons
 var styleForCurrent = preload("res://ui/main/SetupTeams/BlueButtonStyleNormal.tres")
 var styleForNormal = preload("res://ui/main/SetupTeams/ButtonStyleNormal.tres")
+#var that will control when animation plays 
+var winnerbool = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,7 +34,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	var move_speed = 500.0
+	var rotSpeed = 5
+	if winnerbool:
+		get_node("WinnerPath/WinnerPathFollow").progress += move_speed * delta
+		get_node("WinnerPath/WinnerPathFollow/WinnerAxe").rotation += rotSpeed * delta
+	if get_node("WinnerPath/WinnerPathFollow").progress > 615:
+		winnerbool = false
 
 func nextPlayer():
 	if(currentFrame != 10): #Added to prevent clicking the target after the last frame from crashing the program
@@ -55,6 +63,7 @@ func nextPlayer():
 		var winnerscore = totals.max()
 		var winner = totals.rfind(winnerscore)
 		print(str(playerList[winner]) + " Wins") 
+		showWinner(playerList[winner])
 		return
 	#Updating the styles for scoreboard (makes it look better)
 	UpdateCurrentStyle(currentPlayer, currentFrame, styleForCurrent)
@@ -78,6 +87,13 @@ func findPreviousPlayer():
 	else:
 		return [currentPlayer - 1, currentFrame]
 
+#For displaying the winner
+func showWinner(winnerName):
+	winnerbool = true
+	if get_node("WinnerPath/WinnerPathFollow").progress > 615:
+		pass
+
+#Connectors
 func _on_ring_1_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

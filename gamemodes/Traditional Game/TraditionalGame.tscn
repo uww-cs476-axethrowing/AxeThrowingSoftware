@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cu3a4jh1c366f"]
+[gd_scene load_steps=22 format=3 uid="uid://cu3a4jh1c366f"]
 
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
 [ext_resource type="Script" path="res://gamemodes/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bqtfgifdxub12" path="res://Sprites/Inner_bullseye.png" id="9_p6l1p"]
 [ext_resource type="StyleBox" uid="uid://8p4xpba05mg0" path="res://Sprites/RedFlatStyle.tres" id="10_p3ahd"]
 [ext_resource type="StyleBox" uid="uid://b5fgaahkdrq55" path="res://Sprites/RedStylePressed.tres" id="11_5nd4k"]
+[ext_resource type="Texture2D" uid="uid://do3ctt1oayvfr" path="res://Sprites/axesprite1.png" id="12_ir1ue"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhh8k"]
 
@@ -36,6 +37,12 @@ default_font_size = 18
 
 [sub_resource type="Theme" id="Theme_0y1s6"]
 default_font = ExtResource("1_s425j")
+
+[sub_resource type="Curve2D" id="Curve2D_8v0um"]
+_data = {
+"points": PackedVector2Array(-2285.17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 692, -11)
+}
+point_count = 2
 
 [node name="TraditionalGame" type="Node2D"]
 script = ExtResource("1_aad8j")
@@ -1298,6 +1305,18 @@ theme_override_styles/read_only = ExtResource("1_72dic")
 text = "0"
 alignment = 1
 editable = false
+
+[node name="WinnerPath" type="Path2D" parent="."]
+position = Vector2(-120, 472)
+curve = SubResource("Curve2D_8v0um")
+
+[node name="WinnerPathFollow" type="PathFollow2D" parent="WinnerPath"]
+rotation = -0.0158946
+
+[node name="WinnerAxe" type="Sprite2D" parent="WinnerPath/WinnerPathFollow"]
+rotation = 1.39626
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_ir1ue")
 
 [connection signal="input_event" from="target/Ring1Area" to="." method="_on_ring_1_area_input_event"]
 [connection signal="input_event" from="target/Ring2Area" to="." method="_on_ring_2_area_input_event"]
