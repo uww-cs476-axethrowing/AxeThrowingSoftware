@@ -1,123 +1,52 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu3a4jh1c366f"]
+[gd_scene load_steps=18 format=3 uid="uid://trcrdrjdlvt1"]
 
-[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
-[ext_resource type="Script" path="res://gamemodes/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
-[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="1_s425j"]
-[ext_resource type="Texture2D" uid="uid://mrk1rqnl0axj" path="res://Sprites/Ring1.png" id="4_a14ch"]
-[ext_resource type="Texture2D" uid="uid://brsrat7fetytm" path="res://Sprites/Ring2.png" id="5_vi4gf"]
-[ext_resource type="Texture2D" uid="uid://ctggyxn36txd7" path="res://Sprites/Ring3.png" id="6_1ejci"]
-[ext_resource type="Texture2D" uid="uid://7yycqp8s35x4" path="res://Sprites/Ring4.png" id="7_ghvm4"]
-[ext_resource type="Texture2D" uid="uid://1binqhrxrslv" path="res://Sprites/GreenBull.png" id="8_udcwo"]
-[ext_resource type="Texture2D" uid="uid://bqtfgifdxub12" path="res://Sprites/Inner_bullseye.png" id="9_p6l1p"]
-[ext_resource type="StyleBox" uid="uid://8p4xpba05mg0" path="res://Sprites/RedFlatStyle.tres" id="10_p3ahd"]
-[ext_resource type="StyleBox" uid="uid://b5fgaahkdrq55" path="res://Sprites/RedStylePressed.tres" id="11_5nd4k"]
-[ext_resource type="Texture2D" uid="uid://do3ctt1oayvfr" path="res://Sprites/axesprite1.png" id="12_ir1ue"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dhh8k"]
+[ext_resource type="Script" path="res://gamemodes/Traditional Game/TraditionalGame.gd" id="1_xbk0t"]
+[ext_resource type="Texture2D" uid="uid://dhccejrohcqmr" path="res://Sprites/SwampBackground.jpg" id="7_trdx0"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="8_88o4n"]
+[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="9_trhfg"]
+[ext_resource type="StyleBox" uid="uid://8p4xpba05mg0" path="res://Sprites/RedFlatStyle.tres" id="10_2kanr"]
+[ext_resource type="StyleBox" uid="uid://b5fgaahkdrq55" path="res://Sprites/RedStylePressed.tres" id="11_q261c"]
+[ext_resource type="Texture2D" uid="uid://do3ctt1oayvfr" path="res://Sprites/axesprite1.png" id="12_q1j35"]
 
 [sub_resource type="Theme" id="Theme_ofh1m"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 default_font_size = 12
 
 [sub_resource type="Theme" id="Theme_r710w"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 default_font_size = 18
 
 [sub_resource type="Theme" id="Theme_0y1s6"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 
 [sub_resource type="Theme" id="Theme_qecgn"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 
 [sub_resource type="Theme" id="Theme_hnane"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 
 [sub_resource type="Theme" id="Theme_60pq0"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 
 [sub_resource type="Theme" id="Theme_a3cif"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 
 [sub_resource type="Curve2D" id="Curve2D_8v0um"]
 _data = {
-"points": PackedVector2Array(-2285.17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 369, -12)
+"points": PackedVector2Array(-2285.17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 373, -6)
 }
 point_count = 2
 
 [sub_resource type="Theme" id="Theme_lv531"]
-default_font = ExtResource("1_s425j")
+default_font = ExtResource("8_88o4n")
 default_font_size = 36
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1t0s"]
 bg_color = Color(0.137255, 0.0705882, 0.788235, 1)
 border_color = Color(1, 1, 1, 1)
 
-[node name="TraditionalGame" type="Node2D"]
-script = ExtResource("1_aad8j")
-
-[node name="target" type="Node2D" parent="."]
-position = Vector2(250, 461)
-metadata/_edit_group_ = true
-
-[node name="Ring1Area" type="Area2D" parent="target"]
-
-[node name="Ring1Sprite" type="Sprite2D" parent="target/Ring1Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("4_a14ch")
-
-[node name="Ring1Collision" type="CollisionShape2D" parent="target/Ring1Area"]
-scale = Vector2(17.2, 17.2)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring2Area" type="Area2D" parent="target"]
-
-[node name="Ring2Sprite" type="Sprite2D" parent="target/Ring2Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("5_vi4gf")
-
-[node name="Ring2Collision" type="CollisionShape2D" parent="target/Ring2Area"]
-scale = Vector2(13.8, 13.8)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring3Area" type="Area2D" parent="target"]
-
-[node name="Ring3Sprite" type="Sprite2D" parent="target/Ring3Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("6_1ejci")
-
-[node name="Ring3Collision" type="CollisionShape2D" parent="target/Ring3Area"]
-scale = Vector2(10.3, 10.3)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring4Area" type="Area2D" parent="target"]
-
-[node name="Ring4Sprite" type="Sprite2D" parent="target/Ring4Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("7_ghvm4")
-
-[node name="Ring4Collision" type="CollisionShape2D" parent="target/Ring4Area"]
-scale = Vector2(6.9, 6.9)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring5Area" type="Area2D" parent="target"]
-
-[node name="Ring5Sprite" type="Sprite2D" parent="target/Ring5Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("8_udcwo")
-
-[node name="Ring5Collision" type="CollisionShape2D" parent="target/Ring5Area"]
-scale = Vector2(3.5, 3.5)
-shape = SubResource("CircleShape2D_dhh8k")
-
-[node name="Ring6Area" type="Area2D" parent="target"]
-
-[node name="Ring6Sprite" type="Sprite2D" parent="target/Ring6Area"]
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("9_p6l1p")
-
-[node name="Ring6Collision" type="CollisionShape2D" parent="target/Ring6Area"]
-scale = Vector2(1.5, 1.5)
-shape = SubResource("CircleShape2D_dhh8k")
+[node name="HunterGame" type="Node2D"]
+script = ExtResource("1_xbk0t")
 
 [node name="Scoreboard" type="Control" parent="."]
 layout_mode = 3
@@ -145,7 +74,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -166,7 +95,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -176,7 +105,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -186,7 +115,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -196,7 +125,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -206,7 +135,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -216,7 +145,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -226,7 +155,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -236,7 +165,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -246,7 +175,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -256,7 +185,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -273,7 +202,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -294,7 +223,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -304,7 +233,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -314,7 +243,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -324,7 +253,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -334,7 +263,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -344,7 +273,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -354,7 +283,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -364,7 +293,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -374,7 +303,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -384,7 +313,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -401,7 +330,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -422,7 +351,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -432,7 +361,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -442,7 +371,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -452,7 +381,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -462,7 +391,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -472,7 +401,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -482,7 +411,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -492,7 +421,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -502,7 +431,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -512,7 +441,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -529,7 +458,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -550,7 +479,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -560,7 +489,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -570,7 +499,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -580,7 +509,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -590,7 +519,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -600,7 +529,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -610,7 +539,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -620,7 +549,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -630,7 +559,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -640,7 +569,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -657,7 +586,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -678,7 +607,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -688,7 +617,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -698,7 +627,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -708,7 +637,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -718,7 +647,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -728,7 +657,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -738,7 +667,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -748,7 +677,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -758,7 +687,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -768,7 +697,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -785,7 +714,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -806,7 +735,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -816,7 +745,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -826,7 +755,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -836,7 +765,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -846,7 +775,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -856,7 +785,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -866,7 +795,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -876,7 +805,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -886,7 +815,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -896,7 +825,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -913,7 +842,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -934,7 +863,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -944,7 +873,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -954,7 +883,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -964,7 +893,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -974,7 +903,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -984,7 +913,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -994,7 +923,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1004,7 +933,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1014,7 +943,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1024,7 +953,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1041,7 +970,7 @@ offset_right = 100.0
 offset_bottom = 31.0
 theme = SubResource("Theme_ofh1m")
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1062,7 +991,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1072,7 +1001,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1082,7 +1011,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1092,7 +1021,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1102,7 +1031,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1112,7 +1041,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1122,7 +1051,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1132,7 +1061,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1142,7 +1071,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1152,7 +1081,7 @@ theme = SubResource("Theme_r710w")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 alignment = 1
 editable = false
 
@@ -1172,7 +1101,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1185,7 +1114,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1198,7 +1127,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1211,7 +1140,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1224,7 +1153,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1237,7 +1166,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1250,7 +1179,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1263,7 +1192,7 @@ theme = SubResource("Theme_0y1s6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
 theme_override_colors/font_placeholder_color = Color(1, 1, 1, 1)
-theme_override_styles/read_only = ExtResource("1_72dic")
+theme_override_styles/read_only = ExtResource("9_trhfg")
 text = "0"
 alignment = 1
 editable = false
@@ -1274,8 +1203,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_top = 250.0
 offset_right = 500.0
-offset_bottom = 29.0
+offset_bottom = 279.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.998, 0.998)
@@ -1293,9 +1223,9 @@ text = "MISS"
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 theme = SubResource("Theme_hnane")
-theme_override_styles/normal = ExtResource("10_p3ahd")
-theme_override_styles/hover = ExtResource("10_p3ahd")
-theme_override_styles/pressed = ExtResource("11_5nd4k")
+theme_override_styles/normal = ExtResource("10_2kanr")
+theme_override_styles/hover = ExtResource("10_2kanr")
+theme_override_styles/pressed = ExtResource("11_q261c")
 text = "UNDO"
 
 [node name="NewGameButton" type="Button" parent="BottomButtonsContainer"]
@@ -1308,9 +1238,9 @@ text = "NEW GAME"
 custom_minimum_size = Vector2(125, 0)
 layout_mode = 2
 theme = SubResource("Theme_a3cif")
-theme_override_styles/normal = ExtResource("10_p3ahd")
-theme_override_styles/hover = ExtResource("10_p3ahd")
-theme_override_styles/pressed = ExtResource("11_5nd4k")
+theme_override_styles/normal = ExtResource("10_2kanr")
+theme_override_styles/hover = ExtResource("10_2kanr")
+theme_override_styles/pressed = ExtResource("11_q261c")
 text = "MAIN MENU"
 
 [node name="WinnerPath" type="Path2D" parent="."]
@@ -1319,12 +1249,12 @@ curve = SubResource("Curve2D_8v0um")
 metadata/_edit_group_ = true
 
 [node name="WinnerPathFollow" type="PathFollow2D" parent="WinnerPath"]
-rotation = -0.0325089
+rotation = -0.0160844
 
 [node name="WinnerAxe" type="Sprite2D" parent="WinnerPath/WinnerPathFollow"]
-rotation = 2.10661
+rotation = 1.39626
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_ir1ue")
+texture = ExtResource("12_q1j35")
 
 [node name="WinnerText" type="LineEdit" parent="."]
 anchors_preset = 8
@@ -1332,9 +1262,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 119.0
+offset_left = 120.0
 offset_top = 334.0
-offset_right = 381.0
+offset_right = 382.0
 offset_bottom = 387.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1351,13 +1281,13 @@ expand_to_text_length = true
 selecting_enabled = false
 
 [node name="wintimer" type="Timer" parent="."]
+wait_time = 1.597
 
-[connection signal="input_event" from="target/Ring1Area" to="." method="_on_ring_1_area_input_event"]
-[connection signal="input_event" from="target/Ring2Area" to="." method="_on_ring_2_area_input_event"]
-[connection signal="input_event" from="target/Ring3Area" to="." method="_on_ring_3_area_input_event"]
-[connection signal="input_event" from="target/Ring4Area" to="." method="_on_ring_4_area_input_event"]
-[connection signal="input_event" from="target/Ring5Area" to="." method="_on_ring_5_area_input_event"]
-[connection signal="input_event" from="target/Ring6Area" to="." method="_on_ring_6_area_input_event"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 466)
+scale = Vector2(0.82021, 0.605889)
+texture = ExtResource("7_trdx0")
+
 [connection signal="button_down" from="BottomButtonsContainer/MissButton" to="." method="_on_miss_button_button_down"]
 [connection signal="button_down" from="BottomButtonsContainer/UndoButton" to="." method="_on_undo_button_button_down"]
 [connection signal="button_down" from="BottomButtonsContainer/NewGameButton" to="." method="_on_new_game_button_button_down"]

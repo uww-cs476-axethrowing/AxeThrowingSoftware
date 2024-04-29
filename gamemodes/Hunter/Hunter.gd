@@ -39,11 +39,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var move_speed = 500.0
-	var rotSpeed = 9
+	var rotSpeed = 5
 	if winnerbool:
 		get_node("WinnerPath/WinnerPathFollow").progress += move_speed * delta
 		get_node("WinnerPath/WinnerPathFollow/WinnerAxe").rotation += rotSpeed * delta
-	if get_node("WinnerPath/WinnerPathFollow").progress > 290:
+	if get_node("WinnerPath/WinnerPathFollow").progress > 615:
 		winnerbool = false
 
 
@@ -99,37 +99,6 @@ func showWinner(winnerName):
 	get_node("wintimer").start()
 
 #Connectors
-func _on_ring_1_area_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
-		if event.button_index == MOUSE_BUTTON_LEFT and !event.pressed and currentFrame != 10:
-			self.nextPlayer()
-
-func _on_ring_2_area_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
-
-func _on_ring_3_area_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
-
-func _on_ring_4_area_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
-
-func _on_ring_5_area_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
-
-func _on_ring_6_area_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
 
 func _on_miss_button_button_down():
 	if(currentFrame != 10):

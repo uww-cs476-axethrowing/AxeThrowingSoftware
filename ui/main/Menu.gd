@@ -26,7 +26,7 @@ func _on_tic_tac_toe_menu_bt_button_down():
 
 
 func _on_hunter_menu_bt_button_down():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://gamemodes/Hunter/Hunter.tscn")
 
 
 func _on_connect_four_bt_button_down():
