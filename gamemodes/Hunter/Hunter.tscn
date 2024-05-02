@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://trcrdrjdlvt1"]
+[gd_scene load_steps=20 format=3 uid="uid://trcrdrjdlvt1"]
 
-[ext_resource type="Script" path="res://gamemodes/Traditional Game/TraditionalGame.gd" id="1_xbk0t"]
+[ext_resource type="Script" path="res://gamemodes/Hunter/Hunter.gd" id="1_drpom"]
 [ext_resource type="Texture2D" uid="uid://dhccejrohcqmr" path="res://Sprites/SwampBackground.jpg" id="7_trdx0"]
 [ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="8_88o4n"]
+[ext_resource type="Texture2D" uid="uid://k6ny5plue7gx" path="res://Sprites/duckfly.png" id="8_xm62i"]
+[ext_resource type="Texture2D" uid="uid://iuq8o230tepl" path="res://Sprites/ducksit.png" id="9_jj3fn"]
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="9_trhfg"]
 [ext_resource type="StyleBox" uid="uid://8p4xpba05mg0" path="res://Sprites/RedFlatStyle.tres" id="10_2kanr"]
 [ext_resource type="StyleBox" uid="uid://b5fgaahkdrq55" path="res://Sprites/RedStylePressed.tres" id="11_q261c"]
@@ -46,7 +48,7 @@ bg_color = Color(0.137255, 0.0705882, 0.788235, 1)
 border_color = Color(1, 1, 1, 1)
 
 [node name="HunterGame" type="Node2D"]
-script = ExtResource("1_xbk0t")
+script = ExtResource("1_drpom")
 
 [node name="Scoreboard" type="Control" parent="."]
 layout_mode = 3
@@ -1283,10 +1285,32 @@ selecting_enabled = false
 [node name="wintimer" type="Timer" parent="."]
 wait_time = 1.597
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="DuckBackground" type="Sprite2D" parent="."]
 position = Vector2(250, 466)
 scale = Vector2(0.82021, 0.605889)
 texture = ExtResource("7_trdx0")
+
+[node name="DuckFlyArea" type="Area2D" parent="."]
+position = Vector2(-122, 274)
+scale = Vector2(0.25, 0.25)
+
+[node name="DuckFlySprite" type="Sprite2D" parent="DuckFlyArea"]
+texture = ExtResource("8_xm62i")
+
+[node name="DuckFlyCollision" type="CollisionPolygon2D" parent="DuckFlyArea"]
+position = Vector2(-41.3419, -85.6763)
+polygon = PackedVector2Array(0, -1, -18, 52, -5, 91, -73, 90, -71, 99, 29, 153, 6, 188, 10, 197, 70, 182, 140, 127, 190, 115, 153, 95, 100, 110, 85, 102, 69, 82, 52, 44, 25, 25)
+
+[node name="DuckSitArea" type="Area2D" parent="."]
+position = Vector2(-129, 335)
+scale = Vector2(0.3, 0.3)
+
+[node name="DuckSitSprite" type="Sprite2D" parent="DuckSitArea"]
+texture = ExtResource("9_jj3fn")
+
+[node name="DuckSitCollision" type="CollisionPolygon2D" parent="DuckSitArea"]
+position = Vector2(60, -52)
+polygon = PackedVector2Array(-1, -2, -19, 12, -19, 49, -33, 53, -78, 40, -129, 42, -144, 44, -159, 61, -137, 91, -77, 99, 18, 100, 30, 86, 21, 58, 7, 37, 17, 31, 52, 34, 27, 18, 13, 0)
 
 [connection signal="button_down" from="BottomButtonsContainer/MissButton" to="." method="_on_miss_button_button_down"]
 [connection signal="button_down" from="BottomButtonsContainer/UndoButton" to="." method="_on_undo_button_button_down"]

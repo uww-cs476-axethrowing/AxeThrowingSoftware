@@ -16,6 +16,7 @@ var styleForNormal = preload("res://ui/main/SetupTeams/ButtonStyleNormal.tres")
 var winnerbool = false
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Setting winner lable to hide
@@ -97,6 +98,7 @@ func showWinner(winnerName):
 	winnerbool = true
 	get_node("WinnerText").set_text(str(winnerName) + " Wins!")
 	get_node("wintimer").start()
+
 
 #Connectors
 func _on_ring_1_area_input_event(viewport, event, shape_idx):

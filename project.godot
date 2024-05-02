@@ -21,6 +21,10 @@ config/icon="res://icon.svg"
 PlayerList="*res://player_list.gd"
 DisplayControl="*res://display_control.gd"
 
+[display]
+
+window/size/viewport_width=500
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

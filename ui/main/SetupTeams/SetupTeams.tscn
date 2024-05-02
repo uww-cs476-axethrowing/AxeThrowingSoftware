@@ -36,8 +36,7 @@ default_font_size = 25
 script = ExtResource("1_5ha6k")
 
 [node name="AddPlayerButton" type="Button" parent="."]
-offset_left = 344.0
-offset_right = 575.0
+offset_right = 245.0
 offset_bottom = 62.0
 theme = SubResource("Theme_7816n")
 theme_override_fonts/font = ExtResource("2_cllre")
@@ -46,9 +45,8 @@ theme_override_styles/hover = ExtResource("4_o66vh")
 text = "Add Player"
 
 [node name="PlayerListObject" type="ItemList" parent="."]
-offset_left = 344.0
 offset_top = 141.0
-offset_right = 806.0
+offset_right = 500.0
 offset_bottom = 191.0
 theme = SubResource("Theme_7cheq")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -59,9 +57,8 @@ auto_height = true
 script = ExtResource("5_qshga")
 
 [node name="RenamePlayerButton" type="Button" parent="."]
-offset_left = 344.0
 offset_top = 71.0
-offset_right = 575.0
+offset_right = 231.0
 offset_bottom = 133.0
 theme = SubResource("Theme_2re03")
 theme_override_styles/normal = ExtResource("3_kp7oa")
@@ -69,9 +66,9 @@ theme_override_styles/hover = ExtResource("4_o66vh")
 text = "Rename Player:"
 
 [node name="PlayerLineEdit" type="LineEdit" parent="."]
-offset_left = 575.0
+offset_left = 231.0
 offset_top = 71.0
-offset_right = 806.0
+offset_right = 462.0
 offset_bottom = 133.0
 theme = SubResource("Theme_g10jf")
 theme_override_styles/normal = ExtResource("3_kp7oa")
@@ -80,8 +77,8 @@ alignment = 1
 max_length = 10
 
 [node name="RemovePlayerButton" type="Button" parent="."]
-offset_left = 575.0
-offset_right = 806.0
+offset_left = 254.0
+offset_right = 499.0
 offset_bottom = 62.0
 theme = SubResource("Theme_n5v3f")
 theme_override_styles/normal = ExtResource("6_abfxx")
@@ -90,9 +87,8 @@ theme_override_styles/pressed = ExtResource("6_abfxx")
 text = "Remove Player"
 
 [node name="DoneButton" type="Button" parent="."]
-offset_left = 344.0
 offset_top = 493.0
-offset_right = 806.0
+offset_right = 500.0
 offset_bottom = 543.0
 theme = SubResource("Theme_tq113")
 theme_override_styles/normal = ExtResource("8_2e185")
