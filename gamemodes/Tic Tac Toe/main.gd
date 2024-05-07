@@ -20,7 +20,6 @@ var moves: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_window().content_scale_size = Vector2i(1000, 648)
 	board_size = $Board.texture.get_width()
 	cell_size = board_size/3
 	#panel coordinates
