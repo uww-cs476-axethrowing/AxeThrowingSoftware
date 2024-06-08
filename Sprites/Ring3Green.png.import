@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1yxlf6505bri"
-path="res://.godot/imported/grid.png-b18bcaac59017e83925b66a76997eab6.ctex"
+uid="uid://dgs2orotyj5ji"
+path="res://.godot/imported/Ring3Green.png-3efe8a5588b1b2ef488be57b4aa2ccf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gamemodes/Tic Tac Toe/Assests/grid.png"
-dest_files=["res://.godot/imported/grid.png-b18bcaac59017e83925b66a76997eab6.ctex"]
+source_file="res://Sprites/Ring3Green.png"
+dest_files=["res://.godot/imported/Ring3Green.png-3efe8a5588b1b2ef488be57b4aa2ccf0.ctex"]
 
 [params]
 

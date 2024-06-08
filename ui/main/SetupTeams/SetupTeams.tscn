@@ -1,20 +1,111 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2hgnntef48kl"]
+[gd_scene load_steps=17 format=3 uid="uid://irblwyjljyf8"]
 
-[ext_resource type="Script" path="res://ui/main/SetupTeams/PlayerController.gd" id="1_5ha6k"]
 [ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="2_cllre"]
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="3_kp7oa"]
 [ext_resource type="StyleBox" uid="uid://bequivv5im1u4" path="res://ui/main/SetupTeams/ButtonStylePressed.tres" id="4_o66vh"]
-[ext_resource type="Script" path="res://ui/main/SetupTeams/PlayerItemList.gd" id="5_qshga"]
 [ext_resource type="StyleBox" uid="uid://yw1cq6b70rm4" path="res://ui/main/SetupTeams/RedButtonStyleNormal.tres" id="6_abfxx"]
 [ext_resource type="StyleBox" uid="uid://co365rui2e327" path="res://ui/main/SetupTeams/RedButtonStyleHover.tres" id="7_a4eaq"]
 [ext_resource type="StyleBox" uid="uid://doy44wiie1lsr" path="res://ui/main/SetupTeams/BlueButtonStyleNormal.tres" id="8_2e185"]
 [ext_resource type="StyleBox" uid="uid://dqpdujr0336pa" path="res://ui/main/SetupTeams/BlueButtonStyleHover.tres" id="9_c3s06"]
+
+[sub_resource type="GDScript" id="GDScript_jlphr"]
+script/source = "extends Node
+
+var numPlayers = 0
+var playerList = []
+
+@onready var playerListObject = get_node(\"PlayerListObject\")
+@onready var playerNameText = get_node(\"PlayerLineEdit\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	playerList = PlayerList.global_list
+	numPlayers = playerList.size()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+
+#Connect Button to Script
+func _on_add_player_button_pressed():
+	if numPlayers < 8:
+		_addPlayer(\"Player \" + str(numPlayers + 1))
+
+#Structure behind adding player
+func _addPlayer(name):
+	#Add the player to the player list and increment numPlayers
+	playerList.append(name)
+	numPlayers += 1
+	#add the player to the item list so that they can be selected later
+	playerListObject.add_item(name)
+
+#connecter for rename button
+func _on_rename_player_button_button_down():
+	playerNameText.select_all()
+	_renamePlayer(playerNameText.get_selected_text(), playerListObject.get_current())
+
+#Sets the player name in both the item list and the respective player object
+func _renamePlayer(name, current):
+	if(current.size() > 0 and name != \"\"):
+		playerList[current[0]] = name
+		playerListObject.set_item_text(current[0], name)
+
+#connecter for remove button
+func _on_remove_player_button_button_down():
+	if playerListObject.get_current().size() > 0:
+		var current = playerListObject.get_current()[0]
+		_removePlayer(current)
+
+#removes player from player list
+func _removePlayer(current):
+	if(playerList.size() > 1):
+		playerList.remove_at(current)
+		playerListObject.remove_item(current)
+		numPlayers -= 1
+	
+
+#connecter for done button
+func _on_done_button_button_down():
+	if(playerList.size() != 0):
+		PlayerList.set_List(playerList)
+	get_tree().change_scene_to_file(\"res://ui/main/menu.tscn\")
+	
+
+func _on_player_list_object_item_selected(index):
+	PlayerList.set_current_player(playerListObject.get_current())
+	get_tree().change_scene_to_file(\"res://ui/main/SetupTeams/PlayerEdit.gd\")
+"
 
 [sub_resource type="Theme" id="Theme_7816n"]
 default_font_size = 25
 
 [sub_resource type="Theme" id="Theme_7cheq"]
 default_font_size = 30
+
+[sub_resource type="GDScript" id="GDScript_u3m2x"]
+script/source = "extends ItemList
+var currentPlayer = -1
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	for player in PlayerList.global_list:
+		self.add_item(str(player))
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	currentPlayer = self.get_selected_items()
+	
+func add_PlayerIL(name):
+	self.add_item(name)
+	
+func get_current():
+	return currentPlayer
+"
 
 [sub_resource type="Theme" id="Theme_2re03"]
 default_font = ExtResource("2_cllre")
@@ -32,8 +123,12 @@ default_font_size = 25
 default_font = ExtResource("2_cllre")
 default_font_size = 25
 
+[sub_resource type="Theme" id="Theme_slbnq"]
+default_font = ExtResource("2_cllre")
+default_font_size = 25
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_5ha6k")
+script = SubResource("GDScript_jlphr")
 
 [node name="AddPlayerButton" type="Button" parent="."]
 offset_right = 245.0
@@ -54,7 +149,7 @@ theme_override_fonts/font = ExtResource("2_cllre")
 theme_override_styles/panel = ExtResource("3_kp7oa")
 allow_reselect = true
 auto_height = true
-script = ExtResource("5_qshga")
+script = SubResource("GDScript_u3m2x")
 
 [node name="RenamePlayerButton" type="Button" parent="."]
 offset_top = 71.0
@@ -96,7 +191,19 @@ theme_override_styles/hover = ExtResource("9_c3s06")
 theme_override_styles/pressed = ExtResource("8_2e185")
 text = "Done"
 
+[node name="EditSelectedPlayerButton" type="Button" parent="."]
+offset_left = 89.0
+offset_top = 211.0
+offset_right = 377.0
+offset_bottom = 251.0
+theme = SubResource("Theme_slbnq")
+theme_override_styles/normal = ExtResource("8_2e185")
+theme_override_styles/hover = ExtResource("9_c3s06")
+theme_override_styles/pressed = ExtResource("8_2e185")
+text = "Edit Player"
+
 [connection signal="pressed" from="AddPlayerButton" to="." method="_on_add_player_button_pressed"]
+[connection signal="item_selected" from="PlayerListObject" to="." method="_on_player_list_object_item_selected"]
 [connection signal="button_down" from="RenamePlayerButton" to="." method="_on_rename_player_button_button_down"]
 [connection signal="button_down" from="RemovePlayerButton" to="." method="_on_remove_player_button_button_down"]
 [connection signal="button_down" from="DoneButton" to="." method="_on_done_button_button_down"]

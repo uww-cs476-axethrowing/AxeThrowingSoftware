@@ -15,8 +15,6 @@ var styleForNormal = preload("res://ui/main/SetupTeams/ButtonStyleNormal.tres")
 #var that will control when animation plays 
 var winnerbool = false
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#Setting winner lable to hide
@@ -36,7 +34,6 @@ func _ready():
 		totals.append(0)
 		UpdateCurrentStyle(currentPlayer,currentFrame, styleForCurrent)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var move_speed = 500.0
@@ -47,8 +44,12 @@ func _process(delta):
 	if get_node("WinnerPath/WinnerPathFollow").progress > 290:
 		winnerbool = false
 
-
 func nextPlayer():
+	get_node("target/HitTimer").start()
+	if tempScoreHolder < 8 and tempScoreHolder != 0:
+		targetAnimation(tempScoreHolder)
+	await get_node("target/HitTimer").timeout
+	get_node("target/HitTimer").stop()
 	if(currentFrame != 10): #Added to prevent clicking the target after the last frame from crashing the program
 		#sets the text of the scoreboard to the clicked number
 		sbArray[currentPlayer].get_children()[currentFrame].set_text(str(tempScoreHolder))
@@ -63,18 +64,20 @@ func nextPlayer():
 	if(currentPlayer > playerList.size() - 1):
 		currentPlayer = 0
 		currentFrame += 1
-		
 	#Use this to check who wins after frame 10
-	if (currentFrame >= 10):
-		var winnerscore = totals.max()
-		var winner = totals.rfind(winnerscore)
-		print(str(playerList[winner]) + " Wins") 
-		showWinner(playerList[winner])
+	if findWinner():
 		return
 	#Updating the styles for scoreboard (makes it look better)
 	UpdateCurrentStyle(currentPlayer, currentFrame, styleForCurrent)
 	var prev = findPreviousPlayer()
 	UpdateCurrentStyle(prev[0], prev[1], styleForNormal)
+	#killshots
+	if(currentFrame == 4 or currentFrame == 9):
+		get_node("target/KillshotArea").show()
+		get_node("target/KillshotArea2").show()
+	else:
+		get_node("target/KillshotArea").hide()
+		get_node("target/KillshotArea2").hide()
 
 #Used for updating the box style of a player
 func UpdateCurrentStyle(player, frame, style):
@@ -99,43 +102,77 @@ func showWinner(winnerName):
 	get_node("WinnerText").set_text(str(winnerName) + " Wins!")
 	get_node("wintimer").start()
 
+func findWinner():
+	if (currentFrame >= 10):
+		var winnerscore = totals.max()
+		var winner = totals.rfind(winnerscore)
+		print(str(playerList[winner]) + " Wins") 
+		showWinner(playerList[winner])
+		return true
+
+#Animation on target click
+func targetAnimation(start):
+	var textureArray = []
+	#set textures to green
+	for i in range(start, 0, -1):
+		textureArray.append(get_node("target/Ring" + str(i) + "Area/Ring" + str(i) + "Sprite").get_texture())
+		var newTexture = load("res://Sprites/Ring" + str(i) + "Green.png")
+		get_node("target/Ring" + str(i) + "Area/Ring" + str(i) + "Sprite").set_texture(newTexture)
+		await get_tree().create_timer(.05).timeout
+	#set textures back
+	textureArray.reverse()
+	for i in range(start, 0, -1):
+		get_node("target/Ring" + str(i) + "Area/Ring" + str(i) + "Sprite").set_texture(textureArray[i-1])
+		await get_tree().create_timer(.05).timeout
+
+#wait for previous hit
+func wait():
+	return get_node("target/HitTimer").is_stopped()
 
 #Connectors
 func _on_ring_1_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
+			if wait():
+				tempScoreHolder += 1
 		if event.button_index == MOUSE_BUTTON_LEFT and !event.pressed and currentFrame != 10:
-			self.nextPlayer()
+			if wait():
+				self.nextPlayer()
 
 func _on_ring_2_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
+			if wait():
+				tempScoreHolder += 1
 
 func _on_ring_3_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
+			if wait():
+				tempScoreHolder += 1
 
 func _on_ring_4_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
+			if wait():
+				tempScoreHolder += 1
 
 func _on_ring_5_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
+			if wait():
+				tempScoreHolder += 1
 
 func _on_ring_6_area_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			tempScoreHolder += 1
+			if wait():
+				tempScoreHolder += 1
 
 func _on_miss_button_button_down():
 	if(currentFrame != 10):
-		nextPlayer()
+		if wait():
+			nextPlayer()
 
 func _on_undo_button_button_down():
 	if(currentFrame != 10): #Added to prevent clicking undo after the last frame from crashing the program
@@ -161,6 +198,15 @@ func _on_new_game_button_button_down():
 func _on_main_menu_button_button_down():
 	get_tree().change_scene_to_file("res://ui/main/menu.tscn")
 
-
 func _on_wintimer_timeout():
 	get_node("WinnerText").show()
+
+func _on_killshot_area_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			tempScoreHolder += 7
+
+func _on_killshot_area_2_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			tempScoreHolder += 7

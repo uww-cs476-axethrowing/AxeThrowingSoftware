@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgtpgnq5igkfa"
-path="res://.godot/imported/cross.png-9bc4462861a2742fb95d34b9dcc8e47e.ctex"
+uid="uid://dnce5lcvdsg21"
+path="res://.godot/imported/Ring5Green.png-43fd02e6d96abeb3d4a53f0050d0472e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gamemodes/Tic Tac Toe/Assests/cross.png"
-dest_files=["res://.godot/imported/cross.png-9bc4462861a2742fb95d34b9dcc8e47e.ctex"]
+source_file="res://Sprites/Ring5Green.png"
+dest_files=["res://.godot/imported/Ring5Green.png-43fd02e6d96abeb3d4a53f0050d0472e.ctex"]
 
 [params]
 

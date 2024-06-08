@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cu3a4jh1c366f"]
+[gd_scene load_steps=26 format=3 uid="uid://cu3a4jh1c366f"]
 
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="1_72dic"]
 [ext_resource type="Script" path="res://gamemodes/Traditional Game/TraditionalGame.gd" id="1_aad8j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://brsrat7fetytm" path="res://Sprites/Ring2.png" id="5_vi4gf"]
 [ext_resource type="Texture2D" uid="uid://ctggyxn36txd7" path="res://Sprites/Ring3.png" id="6_1ejci"]
 [ext_resource type="Texture2D" uid="uid://7yycqp8s35x4" path="res://Sprites/Ring4.png" id="7_ghvm4"]
+[ext_resource type="Texture2D" uid="uid://cjk3ug06sgykx" path="res://Sprites/killshot.png" id="8_bnhbs"]
 [ext_resource type="Texture2D" uid="uid://1binqhrxrslv" path="res://Sprites/GreenBull.png" id="8_udcwo"]
 [ext_resource type="Texture2D" uid="uid://bqtfgifdxub12" path="res://Sprites/Inner_bullseye.png" id="9_p6l1p"]
 [ext_resource type="StyleBox" uid="uid://8p4xpba05mg0" path="res://Sprites/RedFlatStyle.tres" id="10_p3ahd"]
@@ -14,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://do3ctt1oayvfr" path="res://Sprites/axesprite1.png" id="12_ir1ue"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhh8k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jvmpd"]
 
 [sub_resource type="Theme" id="Theme_ofh1m"]
 default_font = ExtResource("1_s425j")
@@ -118,6 +121,33 @@ texture = ExtResource("9_p6l1p")
 [node name="Ring6Collision" type="CollisionShape2D" parent="target/Ring6Area"]
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_dhh8k")
+
+[node name="KillshotArea" type="Area2D" parent="target"]
+visible = false
+position = Vector2(-103, -115)
+scale = Vector2(0.1, 0.1)
+
+[node name="KillshotSprite" type="Sprite2D" parent="target/KillshotArea"]
+texture = ExtResource("8_bnhbs")
+
+[node name="KillshotCollision" type="CollisionShape2D" parent="target/KillshotArea"]
+scale = Vector2(8.4, 8.4)
+shape = SubResource("CircleShape2D_jvmpd")
+
+[node name="KillshotArea2" type="Area2D" parent="target"]
+visible = false
+position = Vector2(105, -115)
+scale = Vector2(0.1, 0.1)
+
+[node name="KillshotSprite" type="Sprite2D" parent="target/KillshotArea2"]
+texture = ExtResource("8_bnhbs")
+
+[node name="KillshotCollision" type="CollisionShape2D" parent="target/KillshotArea2"]
+scale = Vector2(8.4, 8.4)
+shape = SubResource("CircleShape2D_jvmpd")
+
+[node name="HitTimer" type="Timer" parent="target"]
+wait_time = 0.5
 
 [node name="Scoreboard" type="Control" parent="."]
 layout_mode = 3
@@ -1327,6 +1357,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_ir1ue")
 
 [node name="WinnerText" type="LineEdit" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1358,6 +1389,8 @@ selecting_enabled = false
 [connection signal="input_event" from="target/Ring4Area" to="." method="_on_ring_4_area_input_event"]
 [connection signal="input_event" from="target/Ring5Area" to="." method="_on_ring_5_area_input_event"]
 [connection signal="input_event" from="target/Ring6Area" to="." method="_on_ring_6_area_input_event"]
+[connection signal="input_event" from="target/KillshotArea" to="." method="_on_killshot_area_input_event"]
+[connection signal="input_event" from="target/KillshotArea2" to="." method="_on_killshot_area_2_input_event"]
 [connection signal="button_down" from="BottomButtonsContainer/MissButton" to="." method="_on_miss_button_button_down"]
 [connection signal="button_down" from="BottomButtonsContainer/UndoButton" to="." method="_on_undo_button_button_down"]
 [connection signal="button_down" from="BottomButtonsContainer/NewGameButton" to="." method="_on_new_game_button_button_down"]

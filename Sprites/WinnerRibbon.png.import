@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jgp0gtb35gj6"
-path="res://.godot/imported/circle.png-a13439e04b706619a682ac32e5a47ea8.ctex"
+uid="uid://dqltndkp1e2fn"
+path="res://.godot/imported/WinnerRibbon.png-585b4ec3dee1c78cc401a3335e731564.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gamemodes/Tic Tac Toe/Assests/circle.png"
-dest_files=["res://.godot/imported/circle.png-a13439e04b706619a682ac32e5a47ea8.ctex"]
+source_file="res://Sprites/WinnerRibbon.png"
+dest_files=["res://.godot/imported/WinnerRibbon.png-585b4ec3dee1c78cc401a3335e731564.ctex"]
 
 [params]
 

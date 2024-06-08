@@ -1,5 +1,6 @@
 extends Node
 var global_list = []
+var currentPlayer = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,3 +13,6 @@ func _process(delta):
 
 func set_List(list):
 	global_list = list
+
+func set_current_player(current):
+	currentPlayer = current

@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqitl2b114tpq"]
+
+[ext_resource type="Script" path="res://ui/main/SetupTeams/SetTeams.gd" id="1_yq8i3"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="2_qcpgr"]
+[ext_resource type="StyleBox" uid="uid://doy44wiie1lsr" path="res://ui/main/SetupTeams/BlueButtonStyleNormal.tres" id="3_eahh6"]
+[ext_resource type="StyleBox" uid="uid://dqpdujr0336pa" path="res://ui/main/SetupTeams/BlueButtonStyleHover.tres" id="4_77tjs"]
+[ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="5_hkf1q"]
+[ext_resource type="StyleBox" uid="uid://bequivv5im1u4" path="res://ui/main/SetupTeams/ButtonStylePressed.tres" id="6_mvtun"]
+
+[sub_resource type="Theme" id="Theme_4nwj6"]
+default_font = ExtResource("2_qcpgr")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_hjdig"]
+default_font = ExtResource("2_qcpgr")
+default_font_size = 25
+
+[node name="SetTeams" type="Node2D"]
+script = ExtResource("1_yq8i3")
+
+[node name="DoneButton" type="Button" parent="."]
+offset_right = 500.0
+offset_bottom = 50.0
+theme = SubResource("Theme_4nwj6")
+theme_override_styles/normal = ExtResource("3_eahh6")
+theme_override_styles/hover = ExtResource("4_77tjs")
+theme_override_styles/pressed = ExtResource("3_eahh6")
+text = "Done"
+
+[node name="PlusButton" type="Button" parent="."]
+offset_top = 102.0
+offset_right = 500.0
+offset_bottom = 152.0
+theme = SubResource("Theme_hjdig")
+theme_override_styles/normal = ExtResource("5_hkf1q")
+theme_override_styles/hover = ExtResource("6_mvtun")
+theme_override_styles/pressed = ExtResource("6_mvtun")
+text = "+"
+
+[node name="Player" type="Button" parent="."]
+offset_left = -508.0
+offset_top = 2.0
+offset_right = -8.0
+offset_bottom = 52.0
+theme = SubResource("Theme_hjdig")
+theme_override_styles/normal = ExtResource("5_hkf1q")
+theme_override_styles/hover = ExtResource("6_mvtun")
+theme_override_styles/pressed = ExtResource("6_mvtun")
+text = "Player"
+
+[connection signal="button_down" from="DoneButton" to="." method="_on_done_button_button_down"]
+[connection signal="button_down" from="PlusButton" to="." method="_on_plus_button_button_down"]

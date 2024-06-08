@@ -1,0 +1,202 @@
+[gd_scene load_steps=15 format=3 uid="uid://db3p67wlbp0a6"]
+
+[ext_resource type="Script" path="res://gamemodes/TicTacToe/TicTacToe.gd" id="1_kbvct"]
+[ext_resource type="Texture2D" uid="uid://dhnhexhcspe6" path="res://Sprites/TicTacToeBoard.png" id="2_3jauf"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="3_ght22"]
+[ext_resource type="Texture2D" uid="uid://bolrrrsybn2cw" path="res://Sprites/Xtictactoe.png" id="4_s04ff"]
+[ext_resource type="Texture2D" uid="uid://0wr20j3g3wer" path="res://Sprites/Otictactoe.png" id="5_bhjdj"]
+[ext_resource type="StyleBox" uid="uid://8p4xpba05mg0" path="res://Sprites/RedFlatStyle.tres" id="6_7d4ip"]
+[ext_resource type="StyleBox" uid="uid://b5fgaahkdrq55" path="res://Sprites/RedStylePressed.tres" id="7_k2x4o"]
+[ext_resource type="Texture2D" uid="uid://dqltndkp1e2fn" path="res://Sprites/WinnerRibbon.png" id="8_4fmse"]
+
+[sub_resource type="Theme" id="Theme_7jqat"]
+default_font = ExtResource("3_ght22")
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_fewgd"]
+default_font = ExtResource("3_ght22")
+
+[sub_resource type="Theme" id="Theme_wyh6j"]
+default_font = ExtResource("3_ght22")
+
+[sub_resource type="Theme" id="Theme_anrt5"]
+default_font = ExtResource("3_ght22")
+
+[sub_resource type="Theme" id="Theme_f16h0"]
+default_font = ExtResource("3_ght22")
+
+[sub_resource type="Theme" id="Theme_odfe7"]
+default_font = ExtResource("3_ght22")
+default_font_size = 50
+
+[node name="TicTacToe" type="Node2D"]
+script = ExtResource("1_kbvct")
+
+[node name="BoardSprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 430)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_3jauf")
+
+[node name="BoardGridContainer" type="GridContainer" parent="."]
+offset_left = 66.0
+offset_top = 246.0
+offset_right = 1616.0
+offset_bottom = 1796.0
+scale = Vector2(0.237, 0.237)
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 3
+
+[node name="TopLeft" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="TopMiddle" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="TopRight" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="MiddleLeft" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="MiddleMiddle" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="MiddleRight" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="BottomLeft" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="BottomMiddle" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="BottomRight" type="TextureButton" parent="BoardGridContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="Player1" type="LineEdit" parent="."]
+offset_left = 62.0
+offset_top = 75.0
+offset_right = 162.0
+offset_bottom = 115.0
+theme = SubResource("Theme_7jqat")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+text = "Player 1"
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="Player2" type="LineEdit" parent="."]
+offset_left = 312.0
+offset_top = 75.0
+offset_right = 437.0
+offset_bottom = 115.0
+theme = SubResource("Theme_7jqat")
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+text = "Player 2"
+editable = false
+expand_to_text_length = true
+flat = true
+
+[node name="XTextureRect" type="TextureRect" parent="."]
+offset_left = 192.0
+offset_top = 75.0
+offset_right = 242.0
+offset_bottom = 125.0
+texture = ExtResource("4_s04ff")
+expand_mode = 1
+
+[node name="OTextureRect" type="TextureRect" parent="."]
+offset_left = 260.0
+offset_top = 75.0
+offset_right = 310.0
+offset_bottom = 125.0
+texture = ExtResource("5_bhjdj")
+expand_mode = 1
+
+[node name="BottomButtonsContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 500.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.998, 0.998)
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="MissButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_fewgd")
+text = "MISS"
+
+[node name="UndoButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_wyh6j")
+theme_override_styles/normal = ExtResource("6_7d4ip")
+theme_override_styles/hover = ExtResource("6_7d4ip")
+theme_override_styles/pressed = ExtResource("7_k2x4o")
+text = "UNDO"
+
+[node name="NewGameButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_anrt5")
+text = "NEW GAME"
+
+[node name="MainMenuButton" type="Button" parent="BottomButtonsContainer"]
+custom_minimum_size = Vector2(125, 0)
+layout_mode = 2
+theme = SubResource("Theme_f16h0")
+theme_override_styles/normal = ExtResource("6_7d4ip")
+theme_override_styles/hover = ExtResource("6_7d4ip")
+theme_override_styles/pressed = ExtResource("7_k2x4o")
+text = "MAIN MENU"
+
+[node name="RibbonSprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 115)
+scale = Vector2(0.604688, 0.508333)
+texture = ExtResource("8_4fmse")
+
+[node name="WinnerText" type="LineEdit" parent="RibbonSprite2D"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -438.0
+offset_top = -10.0
+offset_right = -202.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme = SubResource("Theme_odfe7")
+alignment = 1
+expand_to_text_length = true
+flat = true
+
+[connection signal="button_down" from="BoardGridContainer/TopLeft" to="." method="_on_top_left_button_down"]
+[connection signal="button_down" from="BoardGridContainer/TopMiddle" to="." method="_on_top_middle_button_down"]
+[connection signal="button_down" from="BoardGridContainer/TopRight" to="." method="_on_top_right_button_down"]
+[connection signal="button_down" from="BoardGridContainer/MiddleLeft" to="." method="_on_middle_left_button_down"]
+[connection signal="button_down" from="BoardGridContainer/MiddleMiddle" to="." method="_on_middle_middle_button_down"]
+[connection signal="button_down" from="BoardGridContainer/MiddleRight" to="." method="_on_middle_right_button_down"]
+[connection signal="button_down" from="BoardGridContainer/BottomLeft" to="." method="_on_bottom_left_button_down"]
+[connection signal="button_down" from="BoardGridContainer/BottomMiddle" to="." method="_on_bottom_middle_button_down"]
+[connection signal="button_down" from="BoardGridContainer/BottomRight" to="." method="_on_bottom_right_button_down"]
+[connection signal="button_down" from="BottomButtonsContainer/MissButton" to="." method="_on_miss_button_button_down"]
+[connection signal="button_down" from="BottomButtonsContainer/UndoButton" to="." method="_on_undo_button_button_down"]
+[connection signal="button_down" from="BottomButtonsContainer/NewGameButton" to="." method="_on_new_game_button_button_down"]
+[connection signal="button_down" from="BottomButtonsContainer/MainMenuButton" to="." method="_on_main_menu_button_button_down"]
