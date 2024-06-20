@@ -22,6 +22,7 @@ func _ready():
 		[0, 0, 0]
 	]
 	winnerRibbon.scale = Vector2(0, 0)
+	setBackground()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,6 +42,10 @@ func _process(delta):
 func winnerAnimation(winner):
 	winnerRibbon.get_child(0).text = winner
 	animate = true
+	
+func setBackground():
+	if DevSettings.backgroundDict["tictactoe"] != "":
+		get_node("BackgroundSprite2D").texture = load(DevSettings.backgroundDict["tictactoe"])
 
 func changeButtonTexture(button, player, loc, winnerBool):
 	button = get_node(button)

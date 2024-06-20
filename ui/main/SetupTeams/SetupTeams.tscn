@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://irblwyjljyf8"]
+[gd_scene load_steps=17 format=3 uid="uid://unfp1sc8srjv"]
 
 [ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="2_cllre"]
 [ext_resource type="StyleBox" uid="uid://ckha6ja788jld" path="res://ui/main/SetupTeams/ButtonStyleNormal.tres" id="3_kp7oa"]

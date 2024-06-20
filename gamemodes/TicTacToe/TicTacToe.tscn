@@ -32,6 +32,9 @@ default_font_size = 50
 [node name="TicTacToe" type="Node2D"]
 script = ExtResource("1_kbvct")
 
+[node name="BackgroundSprite2D" type="Sprite2D" parent="."]
+position = Vector2(250, 430)
+
 [node name="BoardSprite2D" type="Sprite2D" parent="."]
 position = Vector2(250, 430)
 scale = Vector2(0.75, 0.75)

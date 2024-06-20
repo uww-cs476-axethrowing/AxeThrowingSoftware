@@ -60,6 +60,9 @@ default_font = ExtResource("8_88o4n")
 [node name="HunterGame" type="Node2D"]
 script = ExtResource("1_drpom")
 
+[node name="BackgroundSprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 250)
+
 [node name="Scoreboard" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 3

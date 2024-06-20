@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6vrfblud47gm"]
+
+[ext_resource type="Script" path="res://ui/main/DeveloperSettings/DeveloperSettings.gd" id="1_fbl22"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="2_s00dl"]
+[ext_resource type="StyleBox" uid="uid://yw1cq6b70rm4" path="res://ui/main/SetupTeams/RedButtonStyleNormal.tres" id="3_tprwq"]
+[ext_resource type="StyleBox" uid="uid://doy44wiie1lsr" path="res://ui/main/SetupTeams/BlueButtonStyleNormal.tres" id="4_ewcsg"]
+[ext_resource type="StyleBox" uid="uid://dqpdujr0336pa" path="res://ui/main/SetupTeams/BlueButtonStyleHover.tres" id="5_5u54s"]
+
+[sub_resource type="Theme" id="Theme_cv508"]
+default_font = ExtResource("2_s00dl")
+default_font_size = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8p10"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+border_width_left = 3
+border_width_top = 4
+border_width_right = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_we3mo"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="DeveloperSettings" type="Node2D"]
+script = ExtResource("1_fbl22")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 150.0
+offset_bottom = 216.0
+
+[node name="GameListLineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_s00dl")
+theme_override_styles/read_only = ExtResource("3_tprwq")
+text = "Game List"
+alignment = 1
+editable = false
+expand_to_text_length = true
+
+[node name="GameItemList" type="ItemList" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+fixed_icon_size = Vector2i(142, 142)
+
+[node name="DoneButton" type="Button" parent="."]
+offset_top = 596.0
+offset_right = 500.0
+offset_bottom = 646.0
+theme = SubResource("Theme_cv508")
+theme_override_styles/normal = ExtResource("4_ewcsg")
+theme_override_styles/hover = ExtResource("5_5u54s")
+theme_override_styles/pressed = ExtResource("4_ewcsg")
+text = "Done"
+
+[node name="DeveloperSettingsPin" type="Node2D" parent="."]
+position = Vector2(213, 38)
+
+[node name="PinBox" type="VBoxContainer" parent="DeveloperSettingsPin"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 33.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="EnterPinLineEdit" type="LineEdit" parent="DeveloperSettingsPin/PinBox"]
+layout_mode = 2
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_s00dl")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_p8p10")
+text = "Change Pin:"
+alignment = 1
+editable = false
+expand_to_text_length = true
+
+[node name="PinLineEdit" type="LineEdit" parent="DeveloperSettingsPin/PinBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_s00dl")
+theme_override_styles/normal = SubResource("StyleBoxFlat_we3mo")
+placeholder_text = "****"
+alignment = 1
+max_length = 4
+
+[node name="SaveButton" type="Button" parent="DeveloperSettingsPin/PinBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_s00dl")
+theme_override_styles/normal = ExtResource("4_ewcsg")
+theme_override_styles/hover = ExtResource("5_5u54s")
+theme_override_styles/pressed = ExtResource("4_ewcsg")
+text = "Save"
+
+[connection signal="item_clicked" from="VBoxContainer/GameItemList" to="." method="_on_game_item_list_item_clicked"]
+[connection signal="button_down" from="DoneButton" to="." method="_on_done_button_button_down"]
+[connection signal="text_changed" from="DeveloperSettingsPin/PinBox/PinLineEdit" to="." method="_on_pin_line_edit_text_changed"]
+[connection signal="button_down" from="DeveloperSettingsPin/PinBox/SaveButton" to="." method="_on_save_button_button_down"]

@@ -1,11 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://du1tbakhk2jrv"]
+[gd_scene load_steps=12 format=3 uid="uid://du1tbakhk2jrv"]
 
 [ext_resource type="Script" path="res://ui/main/Menu.gd" id="1_6000a"]
-[ext_resource type="Texture2D" uid="uid://csxpthgiwacvd" path="res://Sprites/Standard Target (1).png" id="2_nwb32"]
+[ext_resource type="Texture2D" uid="uid://csxpthgiwacvd" path="res://Sprites/MenuButtonSprites/Standard Target (1).png" id="2_nwb32"]
 [ext_resource type="Texture2D" uid="uid://bkoyd3agwcb5m" path="res://Sprites/Setup Teams.png" id="3_b5u34"]
-[ext_resource type="Texture2D" uid="uid://cxg8rh2geis1w" path="res://Sprites/hunter.png" id="4_5gqt5"]
-[ext_resource type="Texture2D" uid="uid://b6raokgdtipbx" path="res://Sprites/Tic.png" id="5_1rp2m"]
-[ext_resource type="Texture2D" uid="uid://cjt3rqp6b6nqk" path="res://Sprites/Connect Four.png" id="6_te8in"]
+[ext_resource type="Texture2D" uid="uid://cxg8rh2geis1w" path="res://Sprites/MenuButtonSprites/hunter.png" id="4_5gqt5"]
+[ext_resource type="Texture2D" uid="uid://b6raokgdtipbx" path="res://Sprites/MenuButtonSprites/Tic.png" id="5_1rp2m"]
+[ext_resource type="Texture2D" uid="uid://cjt3rqp6b6nqk" path="res://Sprites/MenuButtonSprites/Connect Four.png" id="6_te8in"]
+[ext_resource type="SystemFont" uid="uid://bqpmvspsbpcmd" path="res://ui/main/SetupTeams/VerdanaFont.tres" id="7_jrgnn"]
+[ext_resource type="StyleBox" uid="uid://yw1cq6b70rm4" path="res://ui/main/SetupTeams/RedButtonStyleNormal.tres" id="8_55vdu"]
+[ext_resource type="StyleBox" uid="uid://co365rui2e327" path="res://ui/main/SetupTeams/RedButtonStyleHover.tres" id="9_24b30"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02abf"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+border_width_left = 3
+border_width_top = 4
+border_width_right = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6j1m"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 1)
+border_width_left = 3
+border_width_right = 3
+border_color = Color(1, 1, 1, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -78,19 +94,70 @@ layout_mode = 2
 texture_normal = ExtResource("6_te8in")
 
 [node name="StandardTargetMenuBt" type="TextureButton" parent="VBoxContainer2/HBoxContainer2"]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("2_nwb32")
 
 [node name="HunterMenuBt" type="TextureButton" parent="VBoxContainer2/HBoxContainer2"]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("4_5gqt5")
 
 [node name="TicTacToeMenuBt" type="TextureButton" parent="VBoxContainer2/HBoxContainer2"]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture_normal = ExtResource("5_1rp2m")
+
+[node name="DeveloperSettingsPin" type="Node2D" parent="."]
+visible = false
+position = Vector2(250, 100)
+
+[node name="PinBox" type="VBoxContainer" parent="DeveloperSettingsPin"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -20.0
+offset_right = 33.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="EnterPinLineEdit" type="LineEdit" parent="DeveloperSettingsPin/PinBox"]
+layout_mode = 2
+theme_override_colors/font_uneditable_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_jrgnn")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_02abf")
+text = "Enter Pin:"
+alignment = 1
+editable = false
+expand_to_text_length = true
+
+[node name="PinLineEdit" type="LineEdit" parent="DeveloperSettingsPin/PinBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_jrgnn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m6j1m")
+placeholder_text = "****"
+alignment = 1
+max_length = 4
+
+[node name="QuitButton" type="Button" parent="DeveloperSettingsPin/PinBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_jrgnn")
+theme_override_styles/normal = ExtResource("8_55vdu")
+theme_override_styles/hover = ExtResource("9_24b30")
+theme_override_styles/pressed = ExtResource("8_55vdu")
+text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer2/HBoxContainer/SetupTeamsMenuBt" to="." method="_on_setup_teams_menu_bt_pressed"]
@@ -98,3 +165,5 @@ texture_normal = ExtResource("5_1rp2m")
 [connection signal="button_down" from="VBoxContainer2/HBoxContainer/HunterMenuBt" to="." method="_on_hunter_menu_bt_button_down"]
 [connection signal="button_down" from="VBoxContainer2/HBoxContainer/TicTacToeMenuBt" to="." method="_on_tic_tac_toe_menu_bt_button_down"]
 [connection signal="button_down" from="VBoxContainer2/HBoxContainer2/ConnectFourBt" to="." method="_on_connect_four_bt_button_down"]
+[connection signal="text_changed" from="DeveloperSettingsPin/PinBox/PinLineEdit" to="." method="_on_pin_line_edit_text_changed"]
+[connection signal="button_down" from="DeveloperSettingsPin/PinBox/QuitButton" to="." method="_on_quit_button_button_down"]
